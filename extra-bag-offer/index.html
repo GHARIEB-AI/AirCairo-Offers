@@ -125,6 +125,14 @@
         .offer-icon {
             font-size: 60px;
             margin-bottom: 15px;
+            display: inline-block;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-15px) rotate(-5deg); }
+            50% { transform: translateY(0) rotate(0deg); }
+            75% { transform: translateY(-10px) rotate(5deg); }
         }
 
         /* Animated Broken Suitcase */
@@ -132,22 +140,16 @@
             width: 80px;
             height: 80px;
             margin: 0 auto 15px;
+            animation: suitcaseBounce 2s ease-in-out infinite;
         }
-        .floating-bag {
-            animation: float 3s ease-in-out infinite;
-        }
-        .crack-wobble {
-            animation: wobble 4s ease-in-out infinite;
-        }
-        @keyframes float {
-            0% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-8px) rotate(2deg); }
-            100% { transform: translateY(0px) rotate(0deg); }
-        }
-        @keyframes wobble {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(-1deg); }
-            75% { transform: rotate(1deg); }
+        @keyframes suitcaseBounce {
+            0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+            15% { transform: translateY(-12px) rotate(-8deg) scale(1.05); }
+            30% { transform: translateY(0) rotate(0deg) scale(1); }
+            45% { transform: translateY(-8px) rotate(8deg) scale(1.03); }
+            60% { transform: translateY(0) rotate(0deg) scale(1); }
+            75% { transform: translateY(-5px) rotate(-3deg) scale(1.02); }
+            90% { transform: translateY(0) rotate(3deg) scale(1); }
         }
 
         /* Offer Title */
@@ -622,7 +624,7 @@
         <!-- Offer 2: 50% Discount - Borg El Arab & Assiut Routes -->
         <div class="offer-card secondary">
             <div class="offer-badge purple">عرض 2</div>
-            <div class="broken-suitcase floating-bag crack-wobble">
+            <div class="broken-suitcase">
                 <svg viewBox="0 0 400 400" class="w-full h-full drop-shadow-lg">
                     <defs>
                         <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
