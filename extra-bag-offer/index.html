@@ -123,6 +123,29 @@
             margin-bottom: 15px;
         }
 
+        /* Animated Broken Suitcase */
+        .broken-suitcase {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+        }
+        .floating-bag {
+            animation: float 3s ease-in-out infinite;
+        }
+        .crack-wobble {
+            animation: wobble 4s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        @keyframes wobble {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-1deg); }
+            75% { transform: rotate(1deg); }
+        }
+
         /* Offer Title */
         .offer-title {
             font-size: 22px;
@@ -451,6 +474,7 @@
             }
             .offer-card { padding: 40px 35px; border-radius: 30px; }
             .offer-icon { font-size: 80px; }
+            .broken-suitcase { width: 100px; height: 100px; }
             .offer-title { font-size: 28px; }
             .price-value { font-size: 60px; }
             .discount-value { font-size: 80px; }
@@ -490,6 +514,7 @@
             .offer-card { padding: 25px 20px; border-radius: 20px; }
             .offer-badge { top: 10px; right: 10px; padding: 4px 12px; font-size: 11px; }
             .offer-icon { font-size: 50px; }
+            .broken-suitcase { width: 70px; height: 70px; }
             .offer-title { font-size: 20px; }
             .offer-subtitle { font-size: 13px; }
             .price-box { padding: 15px; margin: 15px 0; }
@@ -530,6 +555,7 @@
             .discount-value { font-size: 42px; }
             .share-btn { padding: 8px 14px; font-size: 12px; }
             .offer-routes-grid span { font-size: 9px; padding: 3px 8px; }
+            .broken-suitcase { width: 60px; height: 60px; }
         }
     </style>
 </head>
@@ -594,7 +620,43 @@
         <!-- Offer 2: 50% Discount - Borg El Arab & Assiut Routes -->
         <div class="offer-card secondary">
             <div class="offer-badge purple">عرض 2</div>
-            <div class="offer-icon">⚖️</div>
+            <div class="broken-suitcase floating-bag crack-wobble">
+                <svg viewBox="0 0 400 400" class="w-full h-full drop-shadow-lg">
+                    <defs>
+                        <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#462B73;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#5a3d8a;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#F7941D;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#ea580c;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <!-- Left Handle -->
+                    <g transform="translate(0, 10)">
+                        <rect x="90" y="40" width="10" height="80" fill="#cbd5e1" />
+                        <rect x="140" y="40" width="10" height="80" fill="#cbd5e1" />
+                        <rect x="85" y="30" width="70" height="15" rx="5" fill="#334155" />
+                    </g>
+                    <!-- Right Handle -->
+                    <g transform="translate(0, 10)">
+                        <rect x="250" y="40" width="10" height="80" fill="#fed7aa" />
+                        <rect x="300" y="40" width="10" height="80" fill="#fed7aa" />
+                        <rect x="245" y="30" width="70" height="15" rx="5" fill="#c2410c" />
+                    </g>
+                    <!-- Left Suitcase Half (Purple) -->
+                    <path d="M 50 120 H 190 L 170 150 L 190 180 L 170 210 L 190 240 L 170 270 L 190 300 L 170 330 L 190 360 H 50 Q 20 360 20 330 V 150 Q 20 120 50 120 Z" fill="url(#blueGrad)" stroke="white" stroke-width="2" />
+                    <!-- Right Suitcase Half (Orange) -->
+                    <path d="M 350 120 H 210 L 190 150 L 210 180 L 190 210 L 210 240 L 190 270 L 210 300 L 190 330 L 210 360 H 350 Q 380 360 380 330 V 150 Q 380 120 350 120 Z" fill="url(#orangeGrad)" stroke="white" stroke-width="2" />
+                    <!-- Crack Highlight -->
+                    <path d="M 190 120 L 170 150 L 190 180 L 170 210 L 190 240 L 170 270 L 190 300 L 170 330 L 190 360" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="4" stroke-linecap="round" />
+                    <!-- Wheels -->
+                    <circle cx="60" cy="370" r="15" fill="#1f2937" />
+                    <circle cx="140" cy="370" r="15" fill="#1f2937" />
+                    <circle cx="260" cy="370" r="15" fill="#1f2937" />
+                    <circle cx="340" cy="370" r="15" fill="#1f2937" />
+                </svg>
+            </div>
             <h2 class="offer-title">خصم على الوزن الزائد</h2>
             <p class="offer-subtitle">Excess Weight Discount</p>
 
