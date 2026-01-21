@@ -256,37 +256,56 @@
 
         /* Offer Routes inside card */
         .offer-routes {
-            background: #f8f8f8;
-            border-radius: 12px;
-            padding: 15px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 16px;
+            padding: 20px;
             margin: 15px 0;
             text-align: center;
+            border: 2px dashed rgba(70, 43, 115, 0.2);
         }
-        .offer-routes-title {
-            font-size: 14px;
-            font-weight: 700;
-            color: #462B73;
+        .route-icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+        .route-from {
+            font-size: 13px;
+            color: #666;
             margin-bottom: 5px;
         }
-        .offer-routes-subtitle {
-            font-size: 12px;
-            color: #F7941D;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        .offer-routes-grid {
+        .route-arrow {
             display: flex;
-            flex-wrap: wrap;
+            align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 10px;
+            margin: 10px 0;
         }
-        .offer-routes-grid span {
-            background: #fff;
+        .route-arrow .line {
+            height: 2px;
+            width: 40px;
+            background: linear-gradient(90deg, #462B73, #F7941D);
+            border-radius: 2px;
+        }
+        .route-arrow .plane {
+            font-size: 20px;
+            color: #F7941D;
+            animation: flyPlane 2s ease-in-out infinite;
+        }
+        @keyframes flyPlane {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(-5px); }
+        }
+        .route-to {
+            font-size: 16px;
+            font-weight: 700;
             color: #462B73;
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-size: 11px;
-            border: 1px solid rgba(70, 43, 115, 0.2);
+            background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .route-to .destination {
+            color: #F7941D;
         }
 
         /* Share Section */
@@ -601,20 +620,14 @@
             </ul>
 
             <div class="offer-routes">
-                <div class="offer-routes-title"><img src="aircraft.png" alt="aircraft" style="height: 20px; width: auto; vertical-align: middle; margin-left: 5px;"> الخطوط المشمولة</div>
-                <div class="offer-routes-subtitle">رحلات القاهرة</div>
-                <div class="offer-routes-grid">
-                    <span>المدينة ← القاهرة</span>
-                    <span>جدة ← القاهرة</span>
-                    <span>الرياض ← القاهرة</span>
-                    <span>الدمام ← القاهرة</span>
-                    <span>تبوك ← القاهرة</span>
-                    <span>الجوف ← القاهرة</span>
-                    <span>ينبع ← القاهرة</span>
-                    <span>أبها ← القاهرة</span>
-                    <span>القصيم ← القاهرة</span>
-                    <span>جيزان ← القاهرة</span>
+                <div class="route-icon">🇸🇦</div>
+                <div class="route-from">من جميع مدن المملكة</div>
+                <div class="route-arrow">
+                    <div class="line"></div>
+                    <div class="plane">✈</div>
+                    <div class="line"></div>
                 </div>
+                <div class="route-to">إلى <span class="destination">القاهرة</span> 🇪🇬</div>
             </div>
 
             <a href="https://www.aircairo.com" class="cta-btn">احجز الآن</a>
@@ -673,20 +686,14 @@
             </ul>
 
             <div class="offer-routes">
-                <div class="offer-routes-title"><img src="aircraft.png" alt="aircraft" style="height: 20px; width: auto; vertical-align: middle; margin-left: 5px;"> الخطوط المشمولة</div>
-                <div class="offer-routes-subtitle">رحلات برج العرب وأسيوط</div>
-                <div class="offer-routes-grid">
-                    <span>المدينة ← برج العرب</span>
-                    <span>جدة ← برج العرب</span>
-                    <span>المدينة ← أسيوط</span>
-                    <span>جدة ← أسيوط</span>
-                    <span>الرياض ← أسيوط</span>
-                    <span>الدمام ← أسيوط</span>
-                    <span>تبوك ← أسيوط</span>
-                    <span>الجوف ← أسيوط</span>
-                    <span>أبها ← أسيوط</span>
-                    <span>القصيم ← أسيوط</span>
+                <div class="route-icon">🇸🇦</div>
+                <div class="route-from">من جميع مدن المملكة</div>
+                <div class="route-arrow">
+                    <div class="line"></div>
+                    <div class="plane">✈</div>
+                    <div class="line"></div>
                 </div>
+                <div class="route-to">إلى <span class="destination">برج العرب</span> و <span class="destination">أسيوط</span> 🇪🇬</div>
             </div>
 
             <a href="https://www.aircairo.com" class="cta-btn purple">احجز الآن</a>
