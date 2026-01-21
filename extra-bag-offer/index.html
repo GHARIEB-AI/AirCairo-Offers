@@ -129,12 +129,13 @@
             margin-bottom: 15px;
             display: inline-block;
             animation: bounce 2s ease-in-out infinite;
+            will-change: transform;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
         }
         @keyframes bounce {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            25% { transform: translateY(-15px) rotate(-5deg); }
-            50% { transform: translateY(0) rotate(0deg); }
-            75% { transform: translateY(-10px) rotate(5deg); }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
         /* Animated Broken Suitcase */
