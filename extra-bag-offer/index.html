@@ -287,13 +287,16 @@
             border-radius: 2px;
         }
         .route-arrow .plane {
-            font-size: 20px;
-            color: #F7941D;
+            width: 32px;
+            height: auto;
             animation: flyPlane 2s ease-in-out infinite;
+            will-change: transform;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
         }
         @keyframes flyPlane {
-            0%, 100% { transform: translateX(0); }
-            50% { transform: translateX(-5px); }
+            0%, 100% { transform: translateX(0) translateZ(0); }
+            50% { transform: translateX(-8px) translateZ(0); }
         }
         .route-to {
             font-size: 16px;
@@ -624,7 +627,7 @@
                 <div class="route-from">من جميع مدن المملكة</div>
                 <div class="route-arrow">
                     <div class="line"></div>
-                    <div class="plane">✈</div>
+                    <img src="aircairo_aircraft.png" alt="aircraft" class="plane">
                     <div class="line"></div>
                 </div>
                 <div class="route-to">إلى <span class="destination">القاهرة</span></div>
@@ -689,7 +692,7 @@
                 <div class="route-from">من جميع مدن المملكة</div>
                 <div class="route-arrow">
                     <div class="line"></div>
-                    <div class="plane">✈</div>
+                    <img src="aircairo_aircraft.png" alt="aircraft" class="plane">
                     <div class="line"></div>
                 </div>
                 <div class="route-to">إلى <span class="destination">برج العرب</span> و <span class="destination">أسيوط</span></div>
