@@ -45,14 +45,16 @@
         /* Header */
         .header {
             background: linear-gradient(135deg, #462B73 0%, #5a3d8a 100%);
-            padding: 15px 20px;
-            text-align: center;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .logo {
             display: inline-block;
         }
         .logo img {
-            height: 60px;
+            height: 120px;
             width: auto;
         }
 
@@ -462,8 +464,8 @@
 
         /* Desktop - Large screens */
         @media (min-width: 1200px) {
-            .header { padding: 18px 40px; }
-            .logo img { height: 75px; }
+            .header { height: 80px; }
+            .logo img { height: 150px; }
             .main-title { padding: 50px 40px 20px; }
             .main-title h1 { font-size: 42px; }
             .main-title p { font-size: 22px; }
@@ -501,8 +503,8 @@
 
         /* Mobile - Small screens */
         @media (max-width: 767px) {
-            .header { padding: 12px 15px; }
-            .logo img { height: 50px; }
+            .header { height: 55px; }
+            .logo img { height: 90px; }
             .main-title { padding: 25px 15px 10px; }
             .main-title h1 { font-size: 24px; }
             .main-title p { font-size: 16px; }
@@ -549,7 +551,8 @@
 
         /* Extra small screens */
         @media (max-width: 380px) {
-            .logo img { height: 40px; }
+            .header { height: 45px; }
+            .logo img { height: 70px; }
             .main-title h1 { font-size: 20px; }
             .price-value { font-size: 32px; }
             .discount-value { font-size: 42px; }
