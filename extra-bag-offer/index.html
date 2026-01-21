@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#462B73">
+
+    <title>Air Cairo - عروض الشنط الإضافية | Extra Bag Offers</title>
+    <meta name="description" content="عروض حصرية من Air Cairo - شنطة إضافية 23 كجم بـ 299 ريال فقط + خصم 50% على الوزن الزائد">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gharieb-ai.github.io/AirCairo-Offers/extra-bag-offer/">
+    <meta property="og:title" content="Air Cairo - شنطة إضافية 299 ريال فقط!">
+    <meta property="og:description" content="عروض حصرية: شنطة 23 كجم بـ 299 ريال + خصم 50% على الوزن الزائد. سافر من السعودية لمصر">
+    <meta property="og:image" content="https://gharieb-ai.github.io/AirCairo-Offers/extra-bag-offer/offer-banner.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Air Cairo - شنطة إضافية 299 ريال فقط!">
+    <meta name="twitter:description" content="عروض حصرية: شنطة 23 كجم بـ 299 ريال + خصم 50% على الوزن الزائد">
+    <meta name="twitter:image" content="https://gharieb-ai.github.io/AirCairo-Offers/extra-bag-offer/offer-banner.jpg">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- QR Code Library -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Cairo', 'Segoe UI', sans-serif;
+            background: linear-gradient(180deg, #f5f5f5 0%, #e8e8e8 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: #fff;
+            padding: 15px 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            font-size: 32px;
+            font-weight: 900;
+        }
+        .logo .air { color: #462B73; }
+        .logo .cairo { color: #F7941D; }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #462B73 0%, #5a3d8a 100%);
+        }
+        .hero-image {
+            max-width: 100%;
+            max-height: 500px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        /* Main Title */
+        .main-title {
+            text-align: center;
+            padding: 30px 20px 10px;
+        }
+        .main-title h1 {
+            font-size: 32px;
+            color: #462B73;
+            margin-bottom: 10px;
+        }
+        .main-title p {
+            font-size: 18px;
+            color: #F7941D;
+            font-weight: 600;
+        }
+
+        /* Offers Container */
+        .offers-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        /* Offer Card */
+        .offer-card {
+            background: #fff;
+            border-radius: 25px;
+            padding: 30px 25px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .offer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+        .offer-card.primary { border-color: #F7941D; }
+        .offer-card.secondary { border-color: #462B73; }
+
+        /* Offer Badge */
+        .offer-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #F7941D, #ff6b00);
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        .offer-badge.purple {
+            background: linear-gradient(135deg, #462B73, #5a3d8a);
+        }
+
+        /* Offer Icon */
+        .offer-icon {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        /* Offer Title */
+        .offer-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #462B73;
+            margin-bottom: 10px;
+        }
+        .offer-subtitle {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        /* Price Box */
+        .price-box {
+            background: linear-gradient(135deg, #462B73, #5a3d8a);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .price-box.orange {
+            background: linear-gradient(135deg, #F7941D, #ff6b00);
+        }
+        .price-value {
+            font-size: 48px;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1;
+        }
+        .price-currency {
+            font-size: 20px;
+            color: rgba(255,255,255,0.9);
+        }
+        .price-note {
+            color: rgba(255,255,255,0.8);
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        /* Discount Badge */
+        .discount-value {
+            font-size: 64px;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1;
+        }
+        .discount-percent {
+            font-size: 28px;
+            color: #fff;
+        }
+
+        /* Features List */
+        .features-list {
+            list-style: none;
+            text-align: right;
+            margin: 20px 0;
+        }
+        .features-list li {
+            padding: 8px 0;
+            color: #555;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .features-list li::before {
+            content: '\2713';
+            color: #4ade80;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* CTA Button */
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #F7941D 0%, #ff6b00 100%);
+            color: #fff;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            margin-top: 15px;
+            box-shadow: 0 8px 25px rgba(247, 148, 29, 0.4);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(247, 148, 29, 0.5);
+        }
+        .cta-btn.purple {
+            background: linear-gradient(135deg, #462B73 0%, #5a3d8a 100%);
+            box-shadow: 0 8px 25px rgba(70, 43, 115, 0.4);
+        }
+        .cta-btn.purple:hover {
+            box-shadow: 0 12px 35px rgba(70, 43, 115, 0.5);
+        }
+
+        /* Offer Routes inside card */
+        .offer-routes {
+            background: #f8f8f8;
+            border-radius: 12px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .offer-routes-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #462B73;
+            margin-bottom: 5px;
+        }
+        .offer-routes-subtitle {
+            font-size: 12px;
+            color: #F7941D;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .offer-routes-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+        }
+        .offer-routes-grid span {
+            background: #fff;
+            color: #462B73;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 11px;
+            border: 1px solid rgba(70, 43, 115, 0.2);
+        }
+
+        /* Share Section */
+        .share-section {
+            background: linear-gradient(135deg, #462B73 0%, #5a3d8a 100%);
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .share-title {
+            color: #fff;
+            font-size: 22px;
+            margin-bottom: 25px;
+        }
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .share-btn:hover {
+            transform: translateY(-2px);
+        }
+        .share-btn.whatsapp {
+            background: #25D366;
+        }
+        .share-btn.twitter {
+            background: #1DA1F2;
+        }
+        .share-btn.facebook {
+            background: #1877F2;
+        }
+        .share-btn.copy {
+            background: #F7941D;
+        }
+        .share-btn.telegram {
+            background: #0088cc;
+        }
+
+        /* QR Code Section */
+        .qr-section {
+            background: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .qr-title {
+            color: #462B73;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .qr-subtitle {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .qr-container {
+            display: inline-block;
+            background: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border: 3px solid #F7941D;
+        }
+        #qrcode {
+            display: inline-block;
+        }
+        #qrcode img {
+            border-radius: 10px;
+        }
+
+        /* Install PWA Button */
+        .install-section {
+            background: #f8f8f8;
+            padding: 25px 20px;
+            text-align: center;
+            display: none;
+        }
+        .install-section.show {
+            display: block;
+        }
+        .install-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #462B73, #5a3d8a);
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(70, 43, 115, 0.3);
+        }
+
+        /* Terms */
+        .terms-section {
+            background: #fff;
+            padding: 25px 20px;
+            text-align: center;
+        }
+        .terms-title {
+            color: #462B73;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        .terms-list {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: right;
+            color: #666;
+            font-size: 13px;
+        }
+        .terms-list li {
+            padding: 5px 0;
+            list-style: none;
+            padding-right: 20px;
+            position: relative;
+        }
+        .terms-list li::before {
+            content: '\2022';
+            position: absolute;
+            right: 0;
+            color: #F7941D;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2d1a4a;
+            color: #fff;
+            padding: 25px 20px;
+            text-align: center;
+        }
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+        .footer a {
+            color: #F7941D;
+            text-decoration: none;
+        }
+        .footer p {
+            font-size: 12px;
+            color: rgba(255,255,255,0.6);
+            margin-top: 10px;
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #333;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 14px;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .main-title h1 { font-size: 26px; }
+            .price-value { font-size: 40px; }
+            .discount-value { font-size: 52px; }
+            .offers-container { padding: 15px; }
+            .offer-card { padding: 25px 20px; }
+            .share-buttons { gap: 10px; }
+            .share-btn { padding: 10px 20px; font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">
+            <span class="air">AIR</span><span class="cairo">CAIRO</span>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <img src="offer-banner.jpg" alt="Air Cairo Extra Bag Offer" class="hero-image" onerror="this.style.display='none'">
+    </div>
+
+    <!-- Main Title -->
+    <div class="main-title">
+        <h1>شنط إضافية وسعر أوفر</h1>
+        <p>سافر من السعودية لمصر</p>
+    </div>
+
+    <!-- Offers -->
+    <div class="offers-container">
+
+        <!-- Offer 1: Extra Bag 299 SAR - Cairo Routes -->
+        <div class="offer-card primary">
+            <div class="offer-badge">عرض 1</div>
+            <div class="offer-icon">🧳</div>
+            <h2 class="offer-title">شنطة إضافية 23 كجم</h2>
+            <p class="offer-subtitle">Extra Bag 23 KG</p>
+
+            <div class="price-box orange">
+                <div class="price-value">299</div>
+                <div class="price-currency">ريال فقط</div>
+                <div class="price-note">SAR Only</div>
+            </div>
+
+            <ul class="features-list">
+                <li>وزن الشنطة حتى 23 كجم</li>
+                <li>يُضاف للحجز قبل الرحلة</li>
+                <li>سعر ثابت لجميع الرحلات</li>
+            </ul>
+
+            <div class="offer-routes">
+                <div class="offer-routes-title">✈️ الخطوط المشمولة</div>
+                <div class="offer-routes-subtitle">رحلات القاهرة</div>
+                <div class="offer-routes-grid">
+                    <span>جدة ↔ القاهرة</span>
+                    <span>الرياض ↔ القاهرة</span>
+                    <span>الدمام ↔ القاهرة</span>
+                    <span>المدينة ↔ القاهرة</span>
+                    <span>تبوك ↔ القاهرة</span>
+                    <span>أبها ↔ القاهرة</span>
+                    <span>ينبع ↔ القاهرة</span>
+                    <span>الجوف ↔ القاهرة</span>
+                    <span>القصيم ↔ القاهرة</span>
+                    <span>جيزان ↔ القاهرة</span>
+                </div>
+            </div>
+
+            <a href="https://www.aircairo.com" class="cta-btn">احجز الآن</a>
+        </div>
+
+        <!-- Offer 2: 50% Discount - Borg El Arab & Assiut Routes -->
+        <div class="offer-card secondary">
+            <div class="offer-badge purple">عرض 2</div>
+            <div class="offer-icon">⚖️</div>
+            <h2 class="offer-title">خصم على الوزن الزائد</h2>
+            <p class="offer-subtitle">Excess Weight Discount</p>
+
+            <div class="price-box">
+                <div class="discount-value">50<span class="discount-percent">%</span></div>
+                <div class="price-currency">خصم</div>
+                <div class="price-note">Discount</div>
+            </div>
+
+            <ul class="features-list">
+                <li>خصم 50% على كل كيلو زائد</li>
+                <li>يُطبق في المطار</li>
+                <li>متاح لجميع الدرجات</li>
+            </ul>
+
+            <div class="offer-routes">
+                <div class="offer-routes-title">✈️ الخطوط المشمولة</div>
+                <div class="offer-routes-subtitle">رحلات برج العرب وأسيوط</div>
+                <div class="offer-routes-grid">
+                    <span>جدة ↔ برج العرب</span>
+                    <span>الرياض ↔ برج العرب</span>
+                    <span>الدمام ↔ برج العرب</span>
+                    <span>المدينة ↔ برج العرب</span>
+                    <span>جدة ↔ أسيوط</span>
+                    <span>الرياض ↔ أسيوط</span>
+                    <span>الدمام ↔ أسيوط</span>
+                    <span>المدينة ↔ أسيوط</span>
+                    <span>تبوك ↔ أسيوط</span>
+                    <span>أبها ↔ أسيوط</span>
+                </div>
+            </div>
+
+            <a href="https://www.aircairo.com" class="cta-btn purple">احجز الآن</a>
+        </div>
+
+    </div>
+
+    <!-- Share Section -->
+    <div class="share-section">
+        <h3 class="share-title">📤 شارك العرض مع أصدقائك</h3>
+        <div class="share-buttons">
+            <a href="#" class="share-btn whatsapp" onclick="shareWhatsApp()">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                واتساب
+            </a>
+            <a href="#" class="share-btn telegram" onclick="shareTelegram()">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                تليجرام
+            </a>
+            <a href="#" class="share-btn twitter" onclick="shareTwitter()">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                X
+            </a>
+            <button class="share-btn copy" onclick="copyLink()">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                نسخ الرابط
+            </button>
+        </div>
+    </div>
+
+    <!-- QR Code Section -->
+    <div class="qr-section">
+        <h3 class="qr-title">📱 امسح الكود للوصول السريع</h3>
+        <p class="qr-subtitle">Scan QR Code to access the offer</p>
+        <div class="qr-container">
+            <div id="qrcode"></div>
+        </div>
+    </div>
+
+    <!-- Install PWA Section -->
+    <div class="install-section" id="installSection">
+        <button class="install-btn" id="installBtn" onclick="installPWA()">
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+            أضف للشاشة الرئيسية
+        </button>
+    </div>
+
+    <!-- Terms Section -->
+    <div class="terms-section">
+        <h3 class="terms-title">الشروط والأحكام</h3>
+        <ul class="terms-list">
+            <li><strong>العرض الأول (299 ريال):</strong> ساري على رحلات القاهرة فقط من جميع مدن المملكة</li>
+            <li><strong>العرض الثاني (50% خصم):</strong> ساري على رحلات برج العرب (الإسكندرية) وأسيوط فقط</li>
+            <li>يجب إضافة الشنطة الإضافية عند الحجز أو قبل 24 ساعة من موعد الرحلة</li>
+            <li>الحد الأقصى للوزن 23 كجم للشنطة الواحدة</li>
+            <li>خصم الوزن الزائد يُطبق في المطار فقط</li>
+            <li>العرض قابل للتغيير أو الإلغاء دون إشعار مسبق</li>
+        </ul>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-logo">
+            <span style="color:#fff">AIR</span><span style="color:#F7941D">CAIRO</span>
+        </div>
+        <a href="https://www.aircairo.com">www.aircairo.com</a>
+        <p>&copy; 2025 Air Cairo. All rights reserved.</p>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">تم نسخ الرابط!</div>
+
+    <script>
+        // Page URL (update this after deploying)
+        const PAGE_URL = window.location.href;
+        const SHARE_TEXT = 'عروض Air Cairo الحصرية!\n🧳 شنطة إضافية 23 كجم بـ 299 ريال\n⚖️ خصم 50% على الوزن الزائد\nسافر من السعودية لمصر\n';
+
+        // Generate QR Code
+        document.addEventListener('DOMContentLoaded', function() {
+            new QRCode(document.getElementById("qrcode"), {
+                text: PAGE_URL,
+                width: 180,
+                height: 180,
+                colorDark: "#462B73",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        });
+
+        // Share Functions
+        function shareWhatsApp() {
+            const url = `https://wa.me/?text=${encodeURIComponent(SHARE_TEXT + PAGE_URL)}`;
+            window.open(url, '_blank');
+        }
+
+        function shareTelegram() {
+            const url = `https://t.me/share/url?url=${encodeURIComponent(PAGE_URL)}&text=${encodeURIComponent(SHARE_TEXT)}`;
+            window.open(url, '_blank');
+        }
+
+        function shareTwitter() {
+            const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(SHARE_TEXT)}&url=${encodeURIComponent(PAGE_URL)}`;
+            window.open(url, '_blank');
+        }
+
+        function copyLink() {
+            navigator.clipboard.writeText(PAGE_URL).then(() => {
+                showToast('تم نسخ الرابط!');
+            });
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        // PWA Install
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installSection').classList.add('show');
+        });
+
+        function installPWA() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        showToast('تم إضافة التطبيق!');
+                    }
+                    deferredPrompt = null;
+                    document.getElementById('installSection').classList.remove('show');
+                });
+            }
+        }
+    </script>
+
+</body>
+</html>
