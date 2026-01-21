@@ -128,14 +128,10 @@
             font-size: 60px;
             margin-bottom: 15px;
             display: inline-block;
-            animation: bounce 2s ease-in-out infinite;
+            animation: suitcaseBounce 2s ease-in-out infinite;
             will-change: transform;
             -webkit-transform: translateZ(0);
             transform: translateZ(0);
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
         }
 
         /* Animated Broken Suitcase */
@@ -144,15 +140,18 @@
             height: 80px;
             margin: 0 auto 15px;
             animation: suitcaseBounce 2s ease-in-out infinite;
+            will-change: transform;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
         }
         @keyframes suitcaseBounce {
-            0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
-            15% { transform: translateY(-12px) rotate(-8deg) scale(1.05); }
-            30% { transform: translateY(0) rotate(0deg) scale(1); }
-            45% { transform: translateY(-8px) rotate(8deg) scale(1.03); }
-            60% { transform: translateY(0) rotate(0deg) scale(1); }
-            75% { transform: translateY(-5px) rotate(-3deg) scale(1.02); }
-            90% { transform: translateY(0) rotate(3deg) scale(1); }
+            0%, 100% { transform: translateY(0) rotate(0deg) scale(1) translateZ(0); }
+            15% { transform: translateY(-12px) rotate(-8deg) scale(1.05) translateZ(0); }
+            30% { transform: translateY(0) rotate(0deg) scale(1) translateZ(0); }
+            45% { transform: translateY(-8px) rotate(8deg) scale(1.03) translateZ(0); }
+            60% { transform: translateY(0) rotate(0deg) scale(1) translateZ(0); }
+            75% { transform: translateY(-5px) rotate(-3deg) scale(1.02) translateZ(0); }
+            90% { transform: translateY(0) rotate(3deg) scale(1) translateZ(0); }
         }
 
         /* Offer Title */
