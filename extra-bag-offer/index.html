@@ -45,14 +45,19 @@
         /* Header */
         .header {
             background: linear-gradient(135deg, #462B73 0%, #5a3d8a 100%);
-            padding: 20px 0;
-            text-align: center;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: visible;
         }
         .logo {
-            display: inline-block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .logo img {
-            height: 160px;
+            height: 320px;
             width: auto;
         }
 
@@ -462,8 +467,8 @@
 
         /* Desktop - Large screens */
         @media (min-width: 1200px) {
-            .header { padding: 25px 0; }
-            .logo img { height: 200px; }
+            .header { height: 100px; }
+            .logo img { height: 400px; }
             .main-title { padding: 50px 40px 20px; }
             .main-title h1 { font-size: 42px; }
             .main-title p { font-size: 22px; }
@@ -501,8 +506,8 @@
 
         /* Mobile - Small screens */
         @media (max-width: 767px) {
-            .header { padding: 15px 0; }
-            .logo img { height: 120px; }
+            .header { height: 60px; }
+            .logo img { height: 200px; }
             .main-title { padding: 25px 15px 10px; }
             .main-title h1 { font-size: 24px; }
             .main-title p { font-size: 16px; }
@@ -549,8 +554,8 @@
 
         /* Extra small screens */
         @media (max-width: 380px) {
-            .header { padding: 10px 0; }
-            .logo img { height: 90px; }
+            .header { height: 50px; }
+            .logo img { height: 150px; }
             .main-title h1 { font-size: 20px; }
             .price-value { font-size: 32px; }
             .discount-value { font-size: 42px; }
