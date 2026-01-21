@@ -591,10 +591,10 @@
             <div class="offer-icon">🧳</div>
             <h2 class="offer-title">شنطة إضافية 23 كجم</h2>
             
-            <div class="price-box orange">
+            <div class="price-box orange" onclick="openApp()" style="cursor: pointer;">
                 <div class="price-value">299</div>
                 <div class="price-currency">ريال فقط</div>
-                            </div>
+            </div>
 
             <ul class="features-list">
                 <li>وزن الشنطة حتى 23 كجم</li>
@@ -663,7 +663,7 @@
             </div>
             <h2 class="offer-title">وزن إضافي بنصف الثمن</h2>
             
-            <div class="price-box">
+            <div class="price-box" onclick="openApp()" style="cursor: pointer;">
                 <div class="discount-value">%50</div>
                 <div class="discount-value">خصم</div>
             </div>
@@ -801,6 +801,57 @@
             toast.textContent = message;
             toast.classList.add('show');
             setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        // App Store Links
+        const APP_LINKS = {
+            android: 'https://play.google.com/store/apps/details?id=com.emotion.aircairo&pcampaignid=web_share',
+            ios: 'https://apps.apple.com/sa/app/air-cairo/id1586107553',
+            huawei: 'https://appgallery.huawei.com/app/C105643273'
+        };
+
+        // Open App or Store
+        function openApp() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // Detect Huawei devices
+            const isHuawei = /huawei|honor/i.test(userAgent);
+
+            // Detect iOS
+            const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+
+            // Detect Android
+            const isAndroid = /android/i.test(userAgent);
+
+            let storeUrl;
+
+            if (isIOS) {
+                storeUrl = APP_LINKS.ios;
+            } else if (isHuawei) {
+                storeUrl = APP_LINKS.huawei;
+            } else if (isAndroid) {
+                storeUrl = APP_LINKS.android;
+            } else {
+                // Desktop or unknown - default to Play Store
+                storeUrl = APP_LINKS.android;
+            }
+
+            // Try to open the app first using intent (Android)
+            if (isAndroid && !isHuawei) {
+                const intentUrl = 'intent://aircairo#Intent;scheme=https;package=com.emotion.aircairo;end';
+                const timeout = setTimeout(() => {
+                    window.location.href = storeUrl;
+                }, 1500);
+
+                window.location.href = intentUrl;
+
+                window.addEventListener('blur', () => {
+                    clearTimeout(timeout);
+                }, { once: true });
+            } else {
+                // For iOS/Huawei/Desktop - go directly to store
+                window.location.href = storeUrl;
+            }
         }
 
         // PWA Install
