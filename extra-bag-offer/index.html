@@ -53,11 +53,12 @@
             z-index: 100;
         }
         .logo {
-            font-size: 32px;
-            font-weight: 900;
+            display: inline-block;
         }
-        .logo .air { color: #462B73; }
-        .logo .cairo { color: #F7941D; }
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
 
         /* Hero Section */
         .hero {
@@ -457,7 +458,7 @@
         /* Desktop - Large screens */
         @media (min-width: 1200px) {
             .header { padding: 20px 40px; }
-            .logo { font-size: 40px; }
+            .logo img { height: 65px; }
             .hero { padding: 50px 40px; }
             .hero-image { max-height: 600px; }
             .main-title { padding: 50px 40px 20px; }
@@ -497,7 +498,7 @@
         /* Mobile - Small screens */
         @media (max-width: 767px) {
             .header { padding: 12px 15px; }
-            .logo { font-size: 28px; }
+            .logo img { height: 40px; }
             .hero { padding: 20px 15px; }
             .main-title { padding: 25px 15px 10px; }
             .main-title h1 { font-size: 24px; }
@@ -544,7 +545,7 @@
 
         /* Extra small screens */
         @media (max-width: 380px) {
-            .logo { font-size: 24px; }
+            .logo img { height: 35px; }
             .main-title h1 { font-size: 20px; }
             .price-value { font-size: 32px; }
             .discount-value { font-size: 42px; }
@@ -558,7 +559,7 @@
     <!-- Header -->
     <div class="header">
         <div class="logo">
-            <span class="air">AIR</span><span class="cairo">CAIRO</span>
+            <img src="logo.png" alt="Air Cairo">
         </div>
     </div>
 
@@ -712,7 +713,7 @@
     <!-- Footer -->
     <div class="footer">
         <div class="footer-logo">
-            <span style="color:#fff">AIR</span><span style="color:#F7941D">CAIRO</span>
+            <img src="logo_white.png" alt="Air Cairo" style="height: 45px; width: auto;">
         </div>
         <a href="https://www.aircairo.com">www.aircairo.com</a>
         <p>&copy; 2025 Air Cairo. All rights reserved.</p>
