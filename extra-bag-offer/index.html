@@ -344,8 +344,10 @@
             animation: planeFly 0.7s ease-out forwards;
         }
         @keyframes planePulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+            0%, 100% { transform: scale(1) translateY(0); }
+            25% { transform: scale(1.15) translateY(-3px); }
+            50% { transform: scale(1) translateY(0); }
+            75% { transform: scale(1.1) translateY(-2px); }
         }
         @keyframes planeFly {
             0% { transform: translateY(0) scale(1); opacity: 1; }
