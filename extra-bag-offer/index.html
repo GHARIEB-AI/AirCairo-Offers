@@ -1067,24 +1067,21 @@
             huawei: 'https://appgallery.huawei.com/app/C105643273'
         };
 
-        // Open App or Store using Firebase Dynamic Links
+        // Open App Store page (shows "Open" button if app installed, "Install" if not)
         function openApp() {
             const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-            // Detect Huawei devices (Firebase Dynamic Links don't support Huawei)
+            // Detect device type
             const isHuawei = /huawei|honor/i.test(userAgent);
+            const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
 
-            if (isHuawei) {
-                // Huawei: Go directly to AppGallery
+            // Redirect to appropriate store
+            if (isIOS) {
+                window.location.href = APP_LINKS.ios;
+            } else if (isHuawei) {
                 window.location.href = APP_LINKS.huawei;
             } else {
-                // Android/iOS: Use Firebase Dynamic Link
-                // This automatically opens the app if installed, or redirects to store if not
-                let dynamicLink = 'https://aircairos.page.link/?link=https://aircairo.com';
-                dynamicLink += '&apn=com.emotion.aircairo';  // Android package
-                dynamicLink += '&isi=1586107553';            // iOS App Store ID
-                dynamicLink += '&ibi=com.emotion.aircairo';  // iOS bundle ID
-                window.location.href = dynamicLink;
+                window.location.href = APP_LINKS.android;
             }
         }
 
