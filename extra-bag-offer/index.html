@@ -1067,17 +1067,25 @@
             huawei: 'https://appgallery.huawei.com/app/C105643273'
         };
 
-        // Open App Store page (shows "Open" button if app installed, "Install" if not)
+        // Open App directly if installed, otherwise go to Store
         function openApp() {
             const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
             // Detect device type
             const isHuawei = /huawei|honor/i.test(userAgent);
             const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+            const isAndroid = /android/i.test(userAgent);
 
-            // Redirect to appropriate store
-            if (isIOS) {
-                window.location.href = APP_LINKS.ios;
+            if (isAndroid && !isHuawei) {
+                // Android: Use intent URL to open app directly, fallback to Play Store
+                const intentUrl = 'intent://aircairos.page.link/#Intent;scheme=https;package=com.emotion.aircairo;S.browser_fallback_url=' + encodeURIComponent(APP_LINKS.android) + ';end';
+                window.location.href = intentUrl;
+            } else if (isIOS) {
+                // iOS: Try Universal Link first, then App Store
+                window.location.href = 'https://aircairos.page.link/open';
+                setTimeout(() => {
+                    window.location.href = APP_LINKS.ios;
+                }, 1500);
             } else if (isHuawei) {
                 window.location.href = APP_LINKS.huawei;
             } else {
