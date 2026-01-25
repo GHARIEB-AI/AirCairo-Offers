@@ -1067,47 +1067,24 @@
             huawei: 'https://appgallery.huawei.com/app/C105643273'
         };
 
-        // Open App or Store
+        // Open App or Store using Firebase Dynamic Links
         function openApp() {
             const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-            // Detect Huawei devices
+            // Detect Huawei devices (Firebase Dynamic Links don't support Huawei)
             const isHuawei = /huawei|honor/i.test(userAgent);
 
-            // Detect iOS
-            const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
-
-            // Detect Android
-            const isAndroid = /android/i.test(userAgent);
-
-            let storeUrl;
-
-            if (isIOS) {
-                storeUrl = APP_LINKS.ios;
-            } else if (isHuawei) {
-                storeUrl = APP_LINKS.huawei;
-            } else if (isAndroid) {
-                storeUrl = APP_LINKS.android;
+            if (isHuawei) {
+                // Huawei: Go directly to AppGallery
+                window.location.href = APP_LINKS.huawei;
             } else {
-                // Desktop or unknown - default to Play Store
-                storeUrl = APP_LINKS.android;
-            }
-
-            // Try to open the app first using intent (Android)
-            if (isAndroid && !isHuawei) {
-                const intentUrl = 'intent://aircairo#Intent;scheme=https;package=com.emotion.aircairo;end';
-                const timeout = setTimeout(() => {
-                    window.location.href = storeUrl;
-                }, 1500);
-
-                window.location.href = intentUrl;
-
-                window.addEventListener('blur', () => {
-                    clearTimeout(timeout);
-                }, { once: true });
-            } else {
-                // For iOS/Huawei/Desktop - go directly to store
-                window.location.href = storeUrl;
+                // Android/iOS: Use Firebase Dynamic Link
+                // This automatically opens the app if installed, or redirects to store if not
+                let dynamicLink = 'https://aircairos.page.link/?link=https://aircairo.com';
+                dynamicLink += '&apn=com.emotion.aircairo';  // Android package
+                dynamicLink += '&isi=1586107553';            // iOS App Store ID
+                dynamicLink += '&ibi=com.emotion.aircairo';  // iOS bundle ID
+                window.location.href = dynamicLink;
             }
         }
 
