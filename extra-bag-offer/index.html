@@ -834,13 +834,13 @@
         <!-- Offer 1: Extra Bag 299 SAR - Cairo Routes -->
         <div class="offer-card primary">
             <div class="offer-badge">عرض 1</div>
-            <div class="offer-icon" style="position: relative; display: inline-block;">
+            <div class="offer-icon" style="position: relative; display: inline-block; cursor: pointer;" onclick="openApp()">
                 🧳
                 <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 20px; font-weight: 900; color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">23</span>
             </div>
             <h2 class="offer-title">شنطة إضافية 23 كجم</h2>
 
-            <div class="price-box orange clickable-suitcase" onclick="openApp()" style="cursor: pointer;">
+            <div class="price-box orange">
                 <div class="price-value">299</div>
                 <div class="price-currency">ريال فقط</div>
             </div>
@@ -866,7 +866,7 @@
         <!-- Offer 2: 50% Discount - Borg El Arab & Assiut Routes -->
         <div class="offer-card secondary">
             <div class="offer-badge purple">عرض 2</div>
-            <div class="broken-suitcase">
+            <div class="broken-suitcase" style="cursor: pointer;" onclick="openApp()">
                 <svg viewBox="0 0 400 400" class="w-full h-full drop-shadow-lg">
                     <defs>
                         <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -905,7 +905,7 @@
             </div>
             <h2 class="offer-title">وزن إضافي بنصف الثمن</h2>
 
-            <div class="price-box clickable-suitcase" onclick="openApp()" style="cursor: pointer;">
+            <div class="price-box">
                 <div class="discount-value">%50</div>
                 <div class="discount-value">خصم</div>
             </div>
