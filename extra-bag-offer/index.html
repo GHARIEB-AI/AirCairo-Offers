@@ -43,9 +43,10 @@
             transform: translateY(-50%);
             z-index: 1000;
             display: flex;
+            flex-direction: column;
             align-items: center;
             background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-            padding: 12px 20px 12px 50px;
+            padding: 15px 20px 15px 55px;
             border-radius: 0 30px 30px 0;
             box-shadow: 0 5px 20px rgba(220, 38, 38, 0.4);
             cursor: pointer;
@@ -106,10 +107,49 @@
             display: block;
         }
 
+        /* Countdown Timer */
+        .countdown-timer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            margin-top: 12px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255,255,255,0.3);
+            direction: ltr;
+        }
+        .countdown-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .countdown-value {
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            font-weight: 900;
+            color: #fff;
+            background: rgba(0,0,0,0.3);
+            padding: 4px 6px;
+            border-radius: 5px;
+            min-width: 45px;
+            text-align: center;
+        }
+        .countdown-label {
+            font-size: 9px;
+            color: rgba(255,255,255,0.8);
+            margin-top: 2px;
+        }
+        .countdown-separator {
+            font-size: 18px;
+            font-weight: 900;
+            color: #fff;
+            margin: 0 2px;
+        }
+
         @media (max-width: 767px) {
             .limited-badge {
                 left: -35px;
-                padding: 10px 15px 10px 45px;
+                padding: 12px 15px 12px 50px;
             }
             .limited-badge:hover {
                 left: 0;
@@ -122,11 +162,23 @@
             .limited-badge .badge-text {
                 font-size: 11px;
             }
+            .countdown-timer {
+                margin-top: 8px;
+                padding-top: 8px;
+            }
+            .countdown-value {
+                font-size: 13px;
+                padding: 3px 5px;
+                min-width: 38px;
+            }
+            .countdown-label {
+                font-size: 8px;
+            }
         }
         @media (max-width: 380px) {
             .limited-badge {
                 left: -20px;
-                padding: 8px 12px 8px 40px;
+                padding: 10px 12px 10px 45px;
             }
             .limited-badge .clock {
                 width: 48px;
@@ -135,6 +187,14 @@
             }
             .limited-badge .badge-text {
                 font-size: 10px;
+            }
+            .countdown-value {
+                font-size: 11px;
+                padding: 2px 4px;
+                min-width: 32px;
+            }
+            .countdown-label {
+                font-size: 7px;
             }
         }
 
@@ -702,6 +762,18 @@
             <span>لفترة</span>
             <span>محدودة</span>
         </div>
+        <!-- Countdown Timer -->
+        <div class="countdown-timer">
+            <div class="countdown-block">
+                <div class="countdown-value" id="countdownHours">0000</div>
+                <div class="countdown-label">ساعة</div>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-block">
+                <div class="countdown-value" id="countdownMinutes">00</div>
+                <div class="countdown-label">دقيقة</div>
+            </div>
+        </div>
     </div>
 
     <!-- Header -->
@@ -975,6 +1047,30 @@
                 window.location.href = storeUrl;
             }
         }
+
+        // Countdown Timer - ends March 15, 2026 at 23:59:59
+        const countdownDeadline = new Date('2026-03-15T23:59:59').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const remaining = countdownDeadline - now;
+
+            if (remaining <= 0) {
+                document.getElementById('countdownHours').textContent = '0000';
+                document.getElementById('countdownMinutes').textContent = '00';
+                return;
+            }
+
+            const hours = Math.floor(remaining / (1000 * 60 * 60));
+            const minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+
+            document.getElementById('countdownHours').textContent = hours.toString().padStart(4, '0');
+            document.getElementById('countdownMinutes').textContent = minutes.toString().padStart(2, '0');
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
 
         // PWA Install
         let deferredPrompt;
