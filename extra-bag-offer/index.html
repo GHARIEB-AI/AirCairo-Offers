@@ -38,7 +38,7 @@
         /* Limited Time Badge - Horizontal Layout */
         .limited-badge {
             position: fixed;
-            left: -175px;
+            left: -190px;
             top: 50%;
             transform: translateY(-50%);
             z-index: 1000;
@@ -51,8 +51,8 @@
             border-radius: 0 20px 20px 0;
             box-shadow: 0 5px 25px rgba(220, 38, 38, 0.5);
             cursor: pointer;
-            transition: left 0.4s ease;
-            opacity: 0.85;
+            transition: left 0.4s ease, opacity 0.4s ease;
+            opacity: 0.5;
         }
         .limited-badge:hover {
             left: 0;
@@ -129,7 +129,7 @@
 
         @media (max-width: 767px) {
             .limited-badge {
-                left: -145px;
+                left: -160px;
                 padding: 10px 15px;
                 gap: 10px;
             }
