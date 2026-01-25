@@ -348,12 +348,12 @@
             animation: planeTakeoff 0.6s ease-out forwards;
         }
         @keyframes planeShake {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-5px) scale(1.05); }
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-5px, -5px) scale(1.08); }
         }
         @keyframes planeTakeoff {
-            0% { transform: translateY(0) rotate(0); opacity: 1; }
-            100% { transform: translateY(-50px) rotate(-20deg); opacity: 0; }
+            0% { transform: translate(0, 0) rotate(0); opacity: 1; }
+            100% { transform: translate(-60px, -40px) rotate(-15deg); opacity: 0; }
         }
 
         /* Offer Title */
