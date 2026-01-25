@@ -312,16 +312,27 @@
         }
         .tap-hand {
             position: absolute;
-            bottom: -5px;
-            right: -15px;
-            font-size: 24px;
+            top: -5px;
+            left: -20px;
+            font-size: 22px;
             animation: tapAnimation 1.5s ease-in-out infinite;
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
             z-index: 10;
         }
         @keyframes tapAnimation {
             0%, 100% { transform: translateY(0) scale(1); opacity: 1; }
-            50% { transform: translateY(-8px) scale(0.9); opacity: 0.7; }
+            50% { transform: translateY(5px) scale(0.9); opacity: 0.7; }
+        }
+        /* Hand for clock suitcase */
+        .clock-baggage-btn {
+            position: relative;
+        }
+        .clock-tap-hand {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            font-size: 14px;
+            animation: tapAnimation 1.5s ease-in-out infinite;
         }
 
         /* Offer Title */
@@ -781,7 +792,7 @@
                 <div class="clock-label">دقيقة</div>
             </div>
             <div class="clock-timezone">KSA TIME</div>
-            <a href="https://aircairo.com/en-gl/excess-baggage/" target="_blank" class="clock-baggage-btn" title="احجز شنطة إضافية">🧳</a>
+            <a href="https://aircairo.com/en-gl/excess-baggage/" target="_blank" class="clock-baggage-btn" title="احجز شنطة إضافية">🧳<span class="clock-tap-hand">👆</span></a>
         </div>
     </div>
 
