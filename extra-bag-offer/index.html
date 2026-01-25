@@ -337,21 +337,19 @@
 
         /* Contact Airplane Animation */
         .contact-plane {
-            animation: planePulse 2s ease-in-out infinite;
+            animation: planePulse 2.5s ease-in-out infinite;
             cursor: pointer;
         }
         .contact-plane.takeoff {
-            animation: planeFly 0.7s ease-out forwards;
+            animation: planeFly 1.2s ease-out forwards !important;
         }
         @keyframes planePulse {
-            0%, 100% { transform: scale(1) translateY(0); }
-            25% { transform: scale(1.15) translateY(-3px); }
-            50% { transform: scale(1) translateY(0); }
-            75% { transform: scale(1.1) translateY(-2px); }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
         }
         @keyframes planeFly {
-            0% { transform: translateY(0) scale(1); opacity: 1; }
-            100% { transform: translateY(-80px) scale(1.5); opacity: 0; }
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(2.5); opacity: 0; }
         }
 
         /* Offer Title */
@@ -1143,7 +1141,7 @@
             setTimeout(() => {
                 window.open(link.href, '_blank');
                 plane.classList.remove('takeoff');
-            }, 500);
+            }, 1000);
         }
 
         // PWA Install
