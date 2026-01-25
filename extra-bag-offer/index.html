@@ -35,166 +35,128 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        /* Limited Time Badge */
+        /* Limited Time Badge - Horizontal Layout */
         .limited-badge {
             position: fixed;
-            left: -95px;
+            left: -280px;
             top: 50%;
             transform: translateY(-50%);
             z-index: 1000;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
+            gap: 15px;
             background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-            padding: 15px 20px 15px 55px;
-            border-radius: 0 30px 30px 0;
-            box-shadow: 0 5px 20px rgba(220, 38, 38, 0.4);
+            padding: 12px 20px 12px 20px;
+            border-radius: 0 20px 20px 0;
+            box-shadow: 0 5px 25px rgba(220, 38, 38, 0.5);
             cursor: pointer;
-            transition: left 0.3s ease, opacity 0.3s ease;
-            opacity: 0.7;
+            transition: left 0.4s ease;
+            opacity: 0.85;
         }
         .limited-badge:hover {
             left: 0;
             opacity: 1;
         }
-        .limited-badge .clock {
-            position: absolute;
-            left: -25px;
-            width: 70px;
-            height: 70px;
-            background: #fff;
-            border-radius: 50%;
-            border: 4px solid #1f2937;
+
+        /* Digital Clock Display */
+        .digital-clock {
             display: flex;
             align-items: center;
-            justify-content: center;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+            background: #1a1a1a;
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 2px solid #333;
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);
         }
-        .limited-badge .clock::before {
-            content: '';
-            position: absolute;
-            width: 3px;
-            height: 20px;
-            background: #dc2626;
-            top: 12px;
-            border-radius: 2px;
-            transform-origin: bottom center;
-            animation: clockHand 2s linear infinite;
+        .clock-value {
+            font-family: 'Courier New', 'Monaco', monospace;
+            font-size: 24px;
+            font-weight: 900;
+            color: #22c55e;
+            text-shadow: 0 0 10px #22c55e, 0 0 20px #22c55e;
+            letter-spacing: 2px;
         }
-        .limited-badge .clock::after {
-            content: '';
-            position: absolute;
-            width: 2px;
-            height: 14px;
-            background: #1f2937;
-            border-radius: 2px;
-            transform-origin: bottom center;
-            transform: rotate(90deg);
-            top: 16px;
+        .clock-separator {
+            font-family: 'Courier New', monospace;
+            font-size: 24px;
+            font-weight: 900;
+            color: #22c55e;
+            text-shadow: 0 0 10px #22c55e;
+            margin: 0 2px;
+            animation: blink 1s infinite;
         }
-        @keyframes clockHand {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
         }
+        .clock-label {
+            font-size: 8px;
+            color: #888;
+            margin-top: 2px;
+            text-align: center;
+        }
+        .clock-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Badge Text */
         .limited-badge .badge-text {
             color: #fff;
             font-weight: 900;
-            font-size: 14px;
-            line-height: 1.3;
-            text-align: center;
+            font-size: 16px;
+            line-height: 1.4;
+            text-align: right;
+            white-space: nowrap;
         }
         .limited-badge .badge-text span {
             display: block;
         }
 
-        /* Countdown Timer */
-        .countdown-timer {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 4px;
-            margin-top: 12px;
-            padding-top: 10px;
-            border-top: 1px solid rgba(255,255,255,0.3);
-            direction: ltr;
-        }
-        .countdown-block {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .countdown-value {
-            font-family: 'Courier New', monospace;
-            font-size: 16px;
-            font-weight: 900;
-            color: #fff;
-            background: rgba(0,0,0,0.3);
-            padding: 4px 6px;
-            border-radius: 5px;
-            min-width: 45px;
-            text-align: center;
-        }
-        .countdown-label {
-            font-size: 9px;
-            color: rgba(255,255,255,0.8);
-            margin-top: 2px;
-        }
-        .countdown-separator {
-            font-size: 18px;
-            font-weight: 900;
-            color: #fff;
-            margin: 0 2px;
-        }
-
         @media (max-width: 767px) {
             .limited-badge {
-                left: -75px;
-                padding: 12px 15px 12px 50px;
+                left: -230px;
+                padding: 10px 15px;
+                gap: 10px;
             }
             .limited-badge:hover {
                 left: 0;
             }
-            .limited-badge .clock {
-                width: 55px;
-                height: 55px;
-                left: -20px;
+            .clock-value {
+                font-size: 18px;
+            }
+            .clock-separator {
+                font-size: 18px;
+            }
+            .digital-clock {
+                padding: 6px 10px;
             }
             .limited-badge .badge-text {
-                font-size: 11px;
+                font-size: 12px;
             }
-            .countdown-timer {
-                margin-top: 8px;
-                padding-top: 8px;
-            }
-            .countdown-value {
-                font-size: 13px;
-                padding: 3px 5px;
-                min-width: 38px;
-            }
-            .countdown-label {
-                font-size: 8px;
+            .clock-label {
+                font-size: 7px;
             }
         }
         @media (max-width: 380px) {
             .limited-badge {
-                left: -60px;
-                padding: 10px 12px 10px 45px;
+                left: -200px;
+                padding: 8px 12px;
+                gap: 8px;
             }
-            .limited-badge .clock {
-                width: 48px;
-                height: 48px;
-                left: -18px;
+            .clock-value {
+                font-size: 14px;
+            }
+            .clock-separator {
+                font-size: 14px;
+            }
+            .digital-clock {
+                padding: 5px 8px;
             }
             .limited-badge .badge-text {
                 font-size: 10px;
-            }
-            .countdown-value {
-                font-size: 11px;
-                padding: 2px 4px;
-                min-width: 32px;
-            }
-            .countdown-label {
-                font-size: 7px;
             }
         }
 
@@ -754,25 +716,25 @@
 </head>
 <body>
 
-    <!-- Limited Time Badge -->
+    <!-- Limited Time Badge - Horizontal -->
     <div class="limited-badge">
-        <div class="clock"></div>
+        <!-- Digital Clock Countdown -->
+        <div class="digital-clock">
+            <div class="clock-block">
+                <div class="clock-value" id="countdownHours">1184</div>
+                <div class="clock-label">ساعة</div>
+            </div>
+            <div class="clock-separator">:</div>
+            <div class="clock-block">
+                <div class="clock-value" id="countdownMinutes">09</div>
+                <div class="clock-label">دقيقة</div>
+            </div>
+        </div>
+        <!-- Badge Text -->
         <div class="badge-text">
             <span>عرض</span>
             <span>لفترة</span>
             <span>محدودة</span>
-        </div>
-        <!-- Countdown Timer -->
-        <div class="countdown-timer">
-            <div class="countdown-block">
-                <div class="countdown-value" id="countdownHours">0000</div>
-                <div class="countdown-label">ساعة</div>
-            </div>
-            <div class="countdown-separator">:</div>
-            <div class="countdown-block">
-                <div class="countdown-value" id="countdownMinutes">00</div>
-                <div class="countdown-label">دقيقة</div>
-            </div>
         </div>
     </div>
 
