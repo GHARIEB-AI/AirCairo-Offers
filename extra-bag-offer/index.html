@@ -348,9 +348,8 @@
             animation: planeTakeoff 0.6s ease-out forwards;
         }
         @keyframes planeShake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-3px); }
-            75% { transform: translateX(3px); }
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-5px) scale(1.05); }
         }
         @keyframes planeTakeoff {
             0% { transform: translateY(0) rotate(0); opacity: 1; }
