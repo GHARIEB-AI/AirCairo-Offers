@@ -335,6 +335,28 @@
             animation: tapAnimation 1.5s ease-in-out infinite;
         }
 
+        /* Contact Airplane Animation */
+        .contact-plane {
+            animation: planeShake 0.5s ease-in-out infinite;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .contact-plane:hover {
+            transform: scale(1.1);
+        }
+        .contact-plane.takeoff {
+            animation: planeTakeoff 0.6s ease-out forwards;
+        }
+        @keyframes planeShake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-3px); }
+            75% { transform: translateX(3px); }
+        }
+        @keyframes planeTakeoff {
+            0% { transform: translateY(0) rotate(0); opacity: 1; }
+            100% { transform: translateY(-50px) rotate(-20deg); opacity: 0; }
+        }
+
         /* Offer Title */
         .offer-title {
             font-size: 22px;
@@ -957,7 +979,7 @@
             <li>العروض تطبق على الرحلات (السعودية ← مصر) فقط، و<strong>لا تطبق</strong> على الرحلات (مصر ← السعودية).</li>
             <li><strong>العرض الأول (299 ريال):</strong> حقيبة إضافية واحدة بوزن 23 كجم لكل مسافر بالغ أو طفل.</li>
             <li><strong>العرض الثاني (خصم 50%):</strong> يسري هذا العرض على رحلات برج العرب (الإسكندرية) وأسيوط فقط عند الشراء المسبق لوزن زائد. ولا يسري الخصم على الشراء في المطار وقت السفر.</li>
-            <li>يمكن شراء العروض أثناء الحجز أو إضافتها بعد إصدار التذكرة حتى 8 ساعات قبل موعد الإقلاع عبر الموقع الرسمي أو أي فرع من فروع إير كايرو، وذلك وفقًا للتوافر. <a href="https://aircairo.com/en-sa/office-contacts" target="_blank" style="display: inline-block; vertical-align: middle;"><img src="contact-btn.png" alt="تواصل معنا" style="height: 30px; width: auto; margin-right: 5px;"></a></li>
+            <li>يمكن شراء العروض أثناء الحجز أو إضافتها بعد إصدار التذكرة حتى 8 ساعات قبل موعد الإقلاع عبر الموقع الرسمي أو أي فرع من فروع إير كايرو، وذلك وفقًا للتوافر. <a href="https://aircairo.com/en-sa/office-contacts" target="_blank" style="display: inline-block; vertical-align: middle;" onclick="planeTakeoff(event, this)"><img src="contact-btn.png" alt="تواصل معنا" class="contact-plane" style="height: 30px; width: auto; margin-right: 5px;"></a></li>
             <li>تحتفظ إير كايرو بحق تعديل أو إلغاء العروض وفقًا للسياسات المعتمدة ولا يؤثر ذلك على الطلبات المؤكدة والمدفوعة.</li>
         </ul>
     </div>
@@ -1115,6 +1137,17 @@
         // Update countdown every second
         setInterval(updateCountdown, 1000);
         updateCountdown(); // Initial call
+
+        // Plane Takeoff Animation
+        function planeTakeoff(event, link) {
+            event.preventDefault();
+            const plane = link.querySelector('.contact-plane');
+            plane.classList.add('takeoff');
+            setTimeout(() => {
+                window.open(link.href, '_blank');
+                plane.classList.remove('takeoff');
+            }, 500);
+        }
 
         // PWA Install
         let deferredPrompt;
