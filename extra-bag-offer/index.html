@@ -304,17 +304,17 @@
             90% { transform: translateY(0) rotate(3deg) scale(1) translateZ(0); }
         }
 
-        /* Clickable Suitcase Container */
+        /* Clickable Price Box */
         .clickable-suitcase {
             position: relative;
-            display: inline-block;
+            display: block;
             cursor: pointer;
         }
         .tap-hand {
             position: absolute;
-            top: -5px;
-            left: -20px;
-            font-size: 22px;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
             animation: tapAnimation 1.5s ease-in-out infinite;
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
             z-index: 10;
@@ -816,16 +816,14 @@
         <!-- Offer 1: Extra Bag 299 SAR - Cairo Routes -->
         <div class="offer-card primary">
             <div class="offer-badge">عرض 1</div>
-            <a href="https://aircairo.com/en-gl/excess-baggage/" target="_blank" class="clickable-suitcase">
-                <div class="offer-icon">🧳</div>
-                <span class="tap-hand">👆</span>
-            </a>
+            <div class="offer-icon">🧳</div>
             <h2 class="offer-title">شنطة إضافية 23 كجم</h2>
-            
-            <div class="price-box orange" onclick="openApp()" style="cursor: pointer;">
+
+            <a href="https://aircairo.com/en-gl/excess-baggage/" target="_blank" class="price-box orange clickable-suitcase" style="text-decoration: none;">
                 <div class="price-value">299</div>
                 <div class="price-currency">ريال فقط</div>
-            </div>
+                <span class="tap-hand">👆</span>
+            </a>
 
             <ul class="features-list">
                 <li>وزن الشنطة حتى 23 كجم</li>
@@ -848,7 +846,6 @@
         <!-- Offer 2: 50% Discount - Borg El Arab & Assiut Routes -->
         <div class="offer-card secondary">
             <div class="offer-badge purple">عرض 2</div>
-            <a href="https://aircairo.com/en-gl/excess-baggage/" target="_blank" class="clickable-suitcase">
             <div class="broken-suitcase">
                 <svg viewBox="0 0 400 400" class="w-full h-full drop-shadow-lg">
                     <defs>
@@ -886,14 +883,13 @@
                     <circle cx="340" cy="370" r="15" fill="#1f2937" />
                 </svg>
             </div>
-                <span class="tap-hand">👆</span>
-            </a>
             <h2 class="offer-title">وزن إضافي بنصف الثمن</h2>
-            
-            <div class="price-box" onclick="openApp()" style="cursor: pointer;">
+
+            <a href="https://aircairo.com/en-gl/excess-baggage/" target="_blank" class="price-box clickable-suitcase" style="text-decoration: none;">
                 <div class="discount-value">%50</div>
                 <div class="discount-value">خصم</div>
-            </div>
+                <span class="tap-hand">👆</span>
+            </a>
 
             <ul class="features-list">
                 <li>خصم 50% على كل كيلو زائد</li>
