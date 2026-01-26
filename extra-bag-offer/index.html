@@ -449,6 +449,90 @@
             font-size: 16px;
         }
 
+        /* Triangle Features Layout */
+        .features-triangle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            margin: 20px 0;
+            padding: 15px;
+            background: linear-gradient(135deg, rgba(247, 148, 29, 0.08) 0%, rgba(70, 43, 115, 0.08) 100%);
+            border-radius: 15px;
+        }
+        .features-triangle .top-feature {
+            font-size: 16px;
+            font-weight: 700;
+            color: #F7941D;
+            text-align: center;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, #fff 0%, #fff8f0 100%);
+            border-radius: 25px;
+            box-shadow: 0 3px 10px rgba(247, 148, 29, 0.3);
+            border: 2px solid #F7941D;
+        }
+        .features-triangle.purple .top-feature {
+            color: #462B73;
+            box-shadow: 0 3px 10px rgba(70, 43, 115, 0.3);
+            border-color: #462B73;
+        }
+        .features-triangle .bottom-features {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            gap: 10px;
+        }
+        .features-triangle .bottom-feature {
+            flex: 1;
+            font-size: 12px;
+            font-weight: 600;
+            color: #333;
+            text-align: center;
+            padding: 10px 8px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+        .features-triangle .bottom-feature::before {
+            content: '\2713';
+            color: #4ade80;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        @media (max-width: 767px) {
+            .features-triangle {
+                padding: 12px;
+                gap: 10px;
+            }
+            .features-triangle .top-feature {
+                font-size: 14px;
+                padding: 6px 15px;
+            }
+            .features-triangle .bottom-feature {
+                font-size: 11px;
+                padding: 8px 5px;
+            }
+        }
+        @media (max-width: 380px) {
+            .features-triangle .top-feature {
+                font-size: 12px;
+                padding: 5px 12px;
+            }
+            .features-triangle .bottom-feature {
+                font-size: 10px;
+                padding: 6px 4px;
+                gap: 3px;
+            }
+            .features-triangle .bottom-feature::before {
+                font-size: 12px;
+            }
+        }
+
         /* CTA Button */
         .cta-btn {
             display: inline-block;
@@ -879,10 +963,13 @@
                 <div class="price-currency">ريال فقط</div>
             </div>
 
-            <ul class="features-list">
-                <li>وزن الشنطة حتى 23 كجم</li>
-                <li>متاح إضافتها عند الحجز أو بعد الشراء</li>
-            </ul>
+            <div class="features-triangle">
+                <div class="top-feature">تخفيض 35% على الحقيبة وزن 23 كيلو</div>
+                <div class="bottom-features">
+                    <div class="bottom-feature">متاح إضافتها عند الحجز أو بعد الشراء</div>
+                    <div class="bottom-feature">متاح لجميع الدرجات</div>
+                </div>
+            </div>
 
             <div class="offer-routes">
                 <div class="route-from">من جميع مدن المملكة</div>
@@ -944,10 +1031,13 @@
                 <div class="discount-value">خصم</div>
             </div>
 
-            <ul class="features-list">
-                <li>خصم 50% على كل كيلو زائد</li>
-                <li>متاح لجميع الدرجات</li>
-            </ul>
+            <div class="features-triangle purple">
+                <div class="top-feature">خصم 50% على كل كيلو زائد</div>
+                <div class="bottom-features">
+                    <div class="bottom-feature">متاح إضافتها عند الحجز أو بعد الشراء</div>
+                    <div class="bottom-feature">متاح لجميع الدرجات</div>
+                </div>
+            </div>
 
             <div class="offer-routes">
                 <div class="route-from">من جميع مدن المملكة</div>
@@ -1010,7 +1100,7 @@
             <li>العروض تطبق على الرحلات (السعودية ← مصر) فقط، و<strong>لا تطبق</strong> على الرحلات (مصر ← السعودية).</li>
             <li><strong>العرض الأول (299 ريال):</strong> حقيبة إضافية واحدة بوزن 23 كجم لكل مسافر بالغ أو طفل.</li>
             <li><strong>العرض الثاني (خصم 50%):</strong> يسري هذا العرض على رحلات برج العرب (الإسكندرية) وأسيوط فقط عند الشراء المسبق لوزن زائد. ولا يسري الخصم على الشراء في المطار وقت السفر.</li>
-            <li>يمكن شراء العروض أثناء الحجز أو إضافتها بعد إصدار التذكرة حتى 8 ساعات قبل موعد الإقلاع عبر الموقع الرسمي أو أي فرع من فروع إير كايرو، وذلك وفقًا للتوافر. <a href="https://aircairo.com/en-sa/office-contacts" target="_blank" style="display: inline-block; vertical-align: middle;" onclick="planeTakeoff(event, this)"><img src="contact-btn.png" alt="تواصل معنا" class="contact-plane" style="height: 30px; width: auto; margin-right: 5px;"></a></li>
+            <li>يمكن شراء العرض المناسب مع التذكرة، كما يمكن إضافته بعد إصدار التذكرة حتى 8 ساعات قبل موعد الإقلاع، وذلك عبر موقعنا الإلكتروني أو من خلال أي فرع من فروع إير كايرو. <a href="https://aircairo.com/en-sa/office-contacts" target="_blank" style="display: inline-block; vertical-align: middle;" onclick="planeTakeoff(event, this)"><img src="contact-btn.png" alt="تواصل معنا" class="contact-plane" style="height: 30px; width: auto; margin-right: 5px;"></a></li>
             <li>تحتفظ إير كايرو بحق تعديل أو إلغاء العروض وفقًا للسياسات المعتمدة ولا يؤثر ذلك على الطلبات المؤكدة والمدفوعة.</li>
         </ul>
     </div>
