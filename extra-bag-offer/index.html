@@ -605,36 +605,48 @@
             margin: 10px 0;
         }
         .route-arrow .cloud {
-            width: 35px;
-            height: 15px;
-            background: #87CEEB;
-            border-radius: 20px;
+            width: 22px;
+            height: 8px;
+            background: #fff;
+            border-radius: 10px;
             position: relative;
-            opacity: 0.8;
-            box-shadow: 0 2px 5px rgba(135, 206, 235, 0.4);
+            box-shadow: 0 2px 8px rgba(100, 150, 200, 0.4), inset 0 -2px 4px rgba(200, 220, 240, 0.5);
+            animation: floatCloud 3s ease-in-out infinite;
+        }
+        .route-arrow .cloud:first-child {
+            animation-delay: 0s;
+        }
+        .route-arrow .cloud:last-child {
+            animation-delay: 1.5s;
         }
         .route-arrow .cloud::before {
             content: '';
             position: absolute;
-            width: 15px;
-            height: 15px;
-            background: #87CEEB;
+            width: 10px;
+            height: 10px;
+            background: #fff;
             border-radius: 50%;
-            top: -8px;
-            left: 8px;
+            top: -5px;
+            left: 4px;
+            box-shadow: 0 1px 3px rgba(100, 150, 200, 0.3);
         }
         .route-arrow .cloud::after {
             content: '';
             position: absolute;
-            width: 12px;
-            height: 12px;
-            background: #87CEEB;
+            width: 8px;
+            height: 8px;
+            background: #fff;
             border-radius: 50%;
-            top: -5px;
-            right: 6px;
+            top: -3px;
+            right: 3px;
+            box-shadow: 0 1px 3px rgba(100, 150, 200, 0.3);
+        }
+        @keyframes floatCloud {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0.9; }
+            50% { transform: translateY(-3px) translateX(2px); opacity: 1; }
         }
         .route-arrow .plane {
-            width: 32px;
+            width: 45px;
             height: auto;
             animation: flyPlane 2s ease-in-out infinite;
             will-change: transform;
