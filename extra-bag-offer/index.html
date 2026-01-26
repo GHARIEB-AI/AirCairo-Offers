@@ -587,11 +587,34 @@
             gap: 10px;
             margin: 10px 0;
         }
-        .route-arrow .line {
-            height: 2px;
-            width: 40px;
-            background: linear-gradient(90deg, #462B73, #F7941D);
-            border-radius: 2px;
+        .route-arrow .cloud {
+            width: 35px;
+            height: 15px;
+            background: #87CEEB;
+            border-radius: 20px;
+            position: relative;
+            opacity: 0.8;
+            box-shadow: 0 2px 5px rgba(135, 206, 235, 0.4);
+        }
+        .route-arrow .cloud::before {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: #87CEEB;
+            border-radius: 50%;
+            top: -8px;
+            left: 8px;
+        }
+        .route-arrow .cloud::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #87CEEB;
+            border-radius: 50%;
+            top: -5px;
+            right: 6px;
         }
         .route-arrow .plane {
             width: 32px;
@@ -974,9 +997,9 @@
             <div class="offer-routes">
                 <div class="route-from">من جميع مدن المملكة</div>
                 <div class="route-arrow">
-                    <div class="line"></div>
+                    <div class="cloud"></div>
                     <img src="aircairo_aircraft.png" alt="aircraft" class="plane">
-                    <div class="line"></div>
+                    <div class="cloud"></div>
                 </div>
                 <div class="route-to">إلى <span class="destination">القاهرة</span></div>
             </div>
@@ -1042,9 +1065,9 @@
             <div class="offer-routes">
                 <div class="route-from">من جميع مدن المملكة</div>
                 <div class="route-arrow">
-                    <div class="line"></div>
+                    <div class="cloud"></div>
                     <img src="aircairo_aircraft.png" alt="aircraft" class="plane">
-                    <div class="line"></div>
+                    <div class="cloud"></div>
                 </div>
                 <div class="route-to">إلى <span class="destination">برج العرب</span> و <span class="destination">أسيوط</span></div>
             </div>
