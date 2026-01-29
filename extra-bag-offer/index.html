@@ -1055,7 +1055,7 @@
             <li>تحتفظ إير كايرو بحق تعديل أو إلغاء العروض وفقًا للسياسات المعتمدة ولا يؤثر ذلك على الطلبات المؤكدة والمدفوعة.</li>
             <li style="display: flex; flex-wrap: wrap; align-items: flex-start; direction: rtl;">
                 <span style="flex: 1;">يمكن شراء العروض أثناء الحجز أو إضافتها بعد إصدار التذكرة حتى 8 ساعات قبل موعد الإقلاع - وذلك وفقًا للتوافر - عبر الموقع الرسمي أو أي فرع من فروع إير كايرو.</span>
-                <span style="display: flex; align-items: center; gap: 5px; margin-left: 20px;"><svg class="contact-arrow" viewBox="0 0 165 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet"><defs><linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#F7941D;stop-opacity:1" /><stop offset="100%" style="stop-color:#FF8C00;stop-opacity:1" /></linearGradient><filter id="arrowShadow"><feGaussianBlur in="SourceAlpha" stdDeviation="3"/><feOffset dx="0" dy="3" result="offsetblur"/><feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><polygon points="15,30 30,20 30,40" fill="url(#arrowGradient)" filter="url(#arrowShadow)" stroke="#D67A0F" stroke-width="1.5"/><rect x="30" y="15" width="120" height="30" rx="15" ry="15" fill="url(#arrowGradient)" filter="url(#arrowShadow)" stroke="#D67A0F" stroke-width="1.5"/><text x="90" y="35" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="700" fill="#fff" text-anchor="middle" dominant-baseline="middle">تواصل مع فروعنا</text></svg><a href="https://aircairo.com/en-sa/office-contacts" target="_blank" style="display: inline-block; vertical-align: middle;" onclick="planeTakeoff(event, this)"><img src="contact-btn.png" alt="تواصل معنا" class="contact-plane" style="height: 30px; width: auto; margin-right: 5px;"></a></span>
+                <span style="display: flex; align-items: center; gap: 5px; margin-left: 20px; align-self: flex-end;"><svg class="contact-arrow" viewBox="0 0 165 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet"><defs><linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#F7941D;stop-opacity:1" /><stop offset="100%" style="stop-color:#FF8C00;stop-opacity:1" /></linearGradient><filter id="arrowShadow"><feGaussianBlur in="SourceAlpha" stdDeviation="3"/><feOffset dx="0" dy="3" result="offsetblur"/><feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><polygon points="15,30 30,20 30,40" fill="url(#arrowGradient)" filter="url(#arrowShadow)" stroke="#D67A0F" stroke-width="1.5"/><rect x="30" y="15" width="120" height="30" rx="15" ry="15" fill="url(#arrowGradient)" filter="url(#arrowShadow)" stroke="#D67A0F" stroke-width="1.5"/><text x="90" y="35" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="700" fill="#fff" text-anchor="middle" dominant-baseline="middle">تواصل مع فروعنا</text></svg><a href="https://aircairo.com/en-sa/office-contacts" target="_blank" style="display: inline-block; vertical-align: middle;" onclick="planeTakeoff(event, this)"><img src="contact-btn.png" alt="تواصل معنا" class="contact-plane" style="height: 30px; width: auto; margin-right: 5px;"></a></span>
             </li>
         </ul>
     </div>
@@ -1226,6 +1226,41 @@
                     document.getElementById('installSection').classList.remove('show');
                 });
             }
+        }
+
+        // Auto Fullscreen on Mobile
+        function goFullscreen() {
+            const elem = document.documentElement;
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen().catch(err => {});
+            } else if (elem.webkitRequestFullscreen) {
+                elem.webkitRequestFullscreen();
+            } else if (elem.mozRequestFullScreen) {
+                elem.mozRequestFullScreen();
+            } else if (elem.msRequestFullscreen) {
+                elem.msRequestFullscreen();
+            }
+        }
+
+        // Trigger fullscreen on first user interaction (mobile only)
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (isMobile && !window.matchMedia('(display-mode: standalone)').matches) {
+            let fullscreenTriggered = false;
+
+            // Listen for any user interaction
+            const triggerFullscreen = () => {
+                if (!fullscreenTriggered) {
+                    fullscreenTriggered = true;
+                    setTimeout(() => {
+                        goFullscreen();
+                    }, 500);
+                }
+            };
+
+            // Add listeners for various interaction events
+            document.addEventListener('touchstart', triggerFullscreen, { once: true });
+            document.addEventListener('click', triggerFullscreen, { once: true });
+            document.addEventListener('scroll', triggerFullscreen, { once: true });
         }
     </script>
 
