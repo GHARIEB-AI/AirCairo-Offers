@@ -356,24 +356,23 @@
             font-size: 14px;
             animation: tapAnimation 1.5s ease-in-out infinite;
         }
-        /* Waving hands for clock suitcase */
-        .clock-waving-hands {
-            position: absolute;
-            top: -12px;
-            right: -22px;
-            font-size: 12px;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        /* Baggage with waving hands - horizontal layout */
+        .clock-baggage-btn {
             display: flex;
-            flex-direction: row-reverse;
-            gap: 2px;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 3px;
+            margin-left: 6px;
+            font-size: 22px;
+        }
+        .clock-baggage-btn .suitcase {
+            margin-top: 6px;
+            animation: suitcaseBounce 2s ease-in-out infinite;
         }
         .hand-left {
-            display: inline-block;
             animation: waveLeft 1s ease-in-out infinite;
         }
         .hand-right {
-            display: inline-block;
-            transform: scaleX(-1);
             animation: waveRight 1s ease-in-out infinite;
         }
         @keyframes waveLeft {
@@ -381,8 +380,8 @@
             50% { transform: rotate(-20deg); }
         }
         @keyframes waveRight {
-            0%, 100% { transform: scaleX(-1) rotate(0deg); }
-            50% { transform: scaleX(-1) rotate(20deg); }
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(20deg); }
         }
 
         /* Contact Airplane Animation */
@@ -914,7 +913,7 @@
                 <div class="clock-label">دقيقة</div>
             </div>
             <div class="clock-timezone">REMAINING</div>
-            <div class="clock-baggage-btn">🧳<span class="clock-waving-hands"><span class="hand-left">👋</span><span class="hand-right">👋</span></span></div>
+            <div class="clock-baggage-btn"><span class="hand-left">🖐️</span><span class="suitcase">🧳</span><span class="hand-right">🤚</span></div>
         </div>
     </div>
 
