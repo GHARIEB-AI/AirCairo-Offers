@@ -364,24 +364,25 @@
             font-size: 12px;
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
             display: flex;
+            flex-direction: row-reverse;
             gap: 2px;
         }
         .hand-left {
             display: inline-block;
-            transform: scaleX(-1);
             animation: waveLeft 1s ease-in-out infinite;
         }
         .hand-right {
             display: inline-block;
+            transform: scaleX(-1);
             animation: waveRight 1s ease-in-out infinite;
         }
         @keyframes waveLeft {
-            0%, 100% { transform: scaleX(-1) rotate(0deg); }
-            50% { transform: scaleX(-1) rotate(-20deg); }
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(-20deg); }
         }
         @keyframes waveRight {
-            0%, 100% { transform: rotate(0deg); }
-            50% { transform: rotate(20deg); }
+            0%, 100% { transform: scaleX(-1) rotate(0deg); }
+            50% { transform: scaleX(-1) rotate(20deg); }
         }
 
         /* Contact Airplane Animation */
