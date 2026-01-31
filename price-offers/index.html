@@ -7,21 +7,21 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#462B73">
 
-    <title>اير كايرو - عروض الشنط الإضافية</title><!-- v2 -->
-    <meta name="description" content="عروض حصرية من Air Cairo - شنطة إضافية 23 كجم بـ 299 ريال فقط + خصم 50% على الوزن الزائد">
+    <title>اير كايرو - عروض الأسعار الحصرية</title>
+    <meta name="description" content="عروض حصرية من Air Cairo - توفير 15% عبر وكلاء السفر + خصم 50% على رحلات العاصمة الإدارية">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gharieb-ai.github.io/AirCairo-Offers/extra-bag-offer/">
-    <meta property="og:title" content="Air Cairo - شنطة إضافية 299 ريال فقط!">
-    <meta property="og:description" content="عروض حصرية: شنطة 23 كجم بـ 299 ريال + خصم 50% على الوزن الزائد. سافر من السعودية لمصر">
-    <meta property="og:image" content="https://gharieb-ai.github.io/AirCairo-Offers/extra-bag-offer/offer-banner.jpg">
+    <meta property="og:url" content="https://gharieb-ai.github.io/AirCairo-Offers/price-offers/">
+    <meta property="og:title" content="Air Cairo - عروض الأسعار الحصرية!">
+    <meta property="og:description" content="عروض حصرية: توفير 15% عبر وكلاء السفر + خصم 50% رحلات العاصمة الإدارية. سافر من السعودية لمصر">
+    <meta property="og:image" content="https://gharieb-ai.github.io/AirCairo-Offers/price-offers/offer-banner.jpg">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Air Cairo - شنطة إضافية 299 ريال فقط!">
-    <meta name="twitter:description" content="عروض حصرية: شنطة 23 كجم بـ 299 ريال + خصم 50% على الوزن الزائد">
-    <meta name="twitter:image" content="https://gharieb-ai.github.io/AirCairo-Offers/extra-bag-offer/offer-banner.jpg">
+    <meta name="twitter:title" content="Air Cairo - عروض الأسعار الحصرية!">
+    <meta name="twitter:description" content="عروض حصرية: توفير 15% عبر وكلاء السفر + خصم 50% رحلات العاصمة الإدارية">
+    <meta name="twitter:image" content="https://gharieb-ai.github.io/AirCairo-Offers/price-offers/offer-banner.jpg">
 
     <!-- PWA Manifest -->
     <link rel="manifest" href="manifest.json">
@@ -38,7 +38,7 @@
         /* Limited Time Badge - Horizontal Layout */
         .limited-badge {
             position: fixed;
-            left: -240px;
+            left: -150px;
             top: 50%;
             transform: translateY(-50%);
             z-index: 1000;
@@ -89,10 +89,6 @@
             margin: 0 3px;
             margin-bottom: 12px;
         }
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
-        }
         .clock-label {
             font-size: 8px;
             color: #888;
@@ -122,7 +118,7 @@
             margin-left: 6px;
             font-size: 26px;
             text-decoration: none;
-            animation: suitcaseBounce 2s ease-in-out infinite;
+            animation: iconBounce 2s ease-in-out infinite;
             transition: transform 0.2s ease;
         }
         .clock-baggage-btn:hover {
@@ -144,7 +140,7 @@
 
         @media (max-width: 767px) {
             .limited-badge {
-                left: -155px;
+                left: -130px;
                 padding: 8px 12px;
                 gap: 8px;
             }
@@ -204,6 +200,14 @@
             .clock-baggage-btn {
                 font-size: 18px;
             }
+        }
+
+        @keyframes iconBounce {
+            0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+            15% { transform: translateY(-8px) rotate(-5deg) scale(1.05); }
+            30% { transform: translateY(0) rotate(0deg) scale(1); }
+            45% { transform: translateY(-5px) rotate(5deg) scale(1.03); }
+            60% { transform: translateY(0) rotate(0deg) scale(1); }
         }
 
         body {
@@ -300,165 +304,10 @@
             font-size: 60px;
             margin-bottom: 15px;
             display: inline-block;
-            animation: suitcaseBounce 2s ease-in-out infinite;
+            animation: iconBounce 2s ease-in-out infinite;
             will-change: transform;
             -webkit-transform: translateZ(0);
             transform: translateZ(0);
-        }
-
-        /* Animated Broken Suitcase */
-        .broken-suitcase {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 15px;
-            animation: suitcaseBounce 2s ease-in-out infinite;
-            will-change: transform;
-            -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-        }
-        @keyframes suitcaseBounce {
-            0%, 100% { transform: translateY(0) rotate(0deg) scale(1) translateZ(0); }
-            15% { transform: translateY(-12px) rotate(-8deg) scale(1.05) translateZ(0); }
-            30% { transform: translateY(0) rotate(0deg) scale(1) translateZ(0); }
-            45% { transform: translateY(-8px) rotate(8deg) scale(1.03) translateZ(0); }
-            60% { transform: translateY(0) rotate(0deg) scale(1) translateZ(0); }
-            75% { transform: translateY(-5px) rotate(-3deg) scale(1.02) translateZ(0); }
-            90% { transform: translateY(0) rotate(3deg) scale(1) translateZ(0); }
-        }
-
-        /* Clickable Price Box */
-        .clickable-suitcase {
-            position: relative;
-            display: block;
-            cursor: pointer;
-        }
-        .tap-hand {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 20px;
-            animation: tapAnimation 1.5s ease-in-out infinite;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-            z-index: 10;
-        }
-        @keyframes tapAnimation {
-            0%, 100% { transform: translateY(0) scale(1); opacity: 1; }
-            50% { transform: translateY(5px) scale(0.9); opacity: 0.7; }
-        }
-        /* Hand for clock suitcase */
-        .clock-baggage-btn {
-            position: relative;
-        }
-        .clock-tap-hand {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            font-size: 14px;
-            animation: tapAnimation 1.5s ease-in-out infinite;
-        }
-        /* Baggage with waving hands - horizontal layout */
-        .clock-baggage-btn {
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            gap: 1px;
-            margin-left: 6px;
-        }
-        .clock-baggage-btn .suitcase-wrap {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 4px;
-        }
-        .clock-baggage-btn .suitcase {
-            font-size: 20px;
-            animation: suitcaseBounce 2s ease-in-out infinite;
-        }
-        .clock-baggage-btn .legs {
-            font-size: 8px;
-            margin-top: -4px;
-            display: flex;
-            gap: 6px;
-        }
-        .foot-left {
-            transform: scaleX(-1);
-        }
-        .hand-left, .hand-right {
-            font-size: 14px;
-        }
-        .hand-left {
-            animation: waveLeft 1s ease-in-out infinite;
-        }
-        .hand-right {
-            animation: waveRight 1s ease-in-out infinite;
-        }
-        @keyframes waveLeft {
-            0%, 100% { transform: rotate(0deg); }
-            50% { transform: rotate(-20deg); }
-        }
-        @keyframes waveRight {
-            0%, 100% { transform: rotate(0deg); }
-            50% { transform: rotate(20deg); }
-        }
-
-        /* Contact Airplane Animation */
-        .contact-plane {
-            animation: planePulse 1.5s ease-in-out infinite;
-            cursor: pointer;
-        }
-        .contact-plane.takeoff {
-            animation: planeFly 1.5s ease-in-out forwards !important;
-        }
-        @keyframes planePulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.15); }
-        }
-        @keyframes planeFly {
-            0% { transform: translate(0, 0) scale(1); opacity: 1; }
-            30% { transform: translate(-50px, 0) scale(1.2); opacity: 1; }
-            100% { transform: translate(-150px, -100px) scale(2.5); opacity: 0; }
-        }
-
-        /* Contact Arrow (SVG) */
-        .contact-arrow {
-            display: inline-block;
-            vertical-align: middle;
-            height: 40px;
-            width: 120px;
-            margin-left: 5px;
-            margin-right: 5px;
-            animation: arrowFloat 2.5s ease-in-out infinite, arrowPulse 2s ease-in-out infinite;
-            cursor: default;
-            transition: transform 0.3s ease;
-        }
-        .contact-arrow:hover {
-            transform: translateX(5px) scale(1.05);
-        }
-        @keyframes arrowFloat {
-            0%, 100% { transform: translateY(0) translateX(0); }
-            50% { transform: translateY(-5px) translateX(3px); }
-        }
-        @keyframes arrowPulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.85; }
-        }
-
-        /* Responsive adjustments for contact arrow */
-        @media (max-width: 767px) {
-            .contact-arrow {
-                height: 35px;
-                width: 100px;
-                margin-left: 4px;
-                margin-right: 4px;
-            }
-        }
-        @media (max-width: 380px) {
-            .contact-arrow {
-                height: 30px;
-                width: 85px;
-                margin-left: 3px;
-                margin-right: 3px;
-            }
         }
 
         /* Offer Title */
@@ -533,6 +382,42 @@
             color: #4ade80;
             font-weight: bold;
             font-size: 16px;
+        }
+
+        /* Warning Note */
+        .offer-note {
+            background: #fef3cd;
+            color: #856404;
+            padding: 12px 15px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 15px 0;
+            border: 2px solid #ffc107;
+            text-align: center;
+        }
+
+        /* Dates Badge */
+        .offer-dates {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 700;
+            margin: 15px 0;
+            display: inline-block;
+            border: 2px solid #4caf50;
+        }
+        .offer-dates.urgent {
+            background: #ffebee;
+            color: #c62828;
+            border-color: #ef5350;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
         }
 
         /* CTA Button */
@@ -619,6 +504,24 @@
         }
         .route-to .destination {
             color: #F7941D;
+        }
+
+        /* Contact Airplane Animation */
+        .contact-plane {
+            animation: planePulse 1.5s ease-in-out infinite;
+            cursor: pointer;
+        }
+        .contact-plane.takeoff {
+            animation: planeFly 1.5s ease-in-out forwards !important;
+        }
+        @keyframes planePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+        @keyframes planeFly {
+            0% { transform: translate(0, 0) scale(1); opacity: 1; }
+            30% { transform: translate(-50px, 0) scale(1.2); opacity: 1; }
+            100% { transform: translate(-150px, -100px) scale(2.5); opacity: 0; }
         }
 
         /* Share Section */
@@ -762,6 +665,14 @@
             right: 0;
             color: #F7941D;
         }
+        .terms-list ul {
+            margin-top: 8px;
+            padding-right: 20px;
+        }
+        .terms-list ul li {
+            padding: 4px 0;
+            font-size: 12px;
+        }
 
         /* Footer */
         .footer {
@@ -822,7 +733,6 @@
             }
             .offer-card { padding: 40px 35px; border-radius: 30px; }
             .offer-icon { font-size: 80px; }
-            .broken-suitcase { width: 100px; height: 100px; }
             .offer-title { font-size: 28px; }
             .price-value { font-size: 60px; }
             .discount-value { font-size: 80px; }
@@ -862,7 +772,6 @@
             .offer-card { padding: 25px 20px; border-radius: 20px; }
             .offer-badge { top: 10px; right: 10px; padding: 4px 12px; font-size: 11px; }
             .offer-icon { font-size: 50px; }
-            .broken-suitcase { width: 70px; height: 70px; }
             .offer-title { font-size: 20px; }
             .offer-subtitle { font-size: 13px; }
             .price-box { padding: 15px; margin: 15px 0; }
@@ -872,8 +781,6 @@
             .discount-percent { font-size: 24px; }
             .features-list li { font-size: 13px; padding: 6px 0; }
             .offer-routes { padding: 12px; }
-            .offer-routes-title { font-size: 13px; }
-            .offer-routes-grid span { padding: 4px 10px; font-size: 10px; }
             .cta-btn { padding: 12px 30px; font-size: 16px; }
             .share-section { padding: 18px 15px; }
             .share-title { font-size: 18px; margin-bottom: 12px; }
@@ -903,8 +810,6 @@
             .price-value { font-size: 32px; }
             .discount-value { font-size: 42px; }
             .share-btn { padding: 8px 14px; font-size: 12px; }
-            .offer-routes-grid span { font-size: 9px; padding: 3px 8px; }
-            .broken-suitcase { width: 60px; height: 60px; }
         }
     </style>
 </head>
@@ -930,7 +835,7 @@
                 <div class="clock-label">دقيقة</div>
             </div>
             <div class="clock-timezone">REMAINING</div>
-            <div class="clock-baggage-btn"><span class="hand-left">🖐️</span><span class="suitcase-wrap"><span class="suitcase">🧳</span><span class="legs"><span class="foot-left">🦶</span><span class="foot-right">🦶</span></span></span><span class="hand-right">🤚</span></div>
+            <a href="https://aircairo.com/ar-sa/homepage" target="_blank" class="clock-baggage-btn" title="احجز الآن">💰<span class="clock-tap-hand">👆</span></a>
         </div>
     </div>
 
@@ -944,30 +849,29 @@
 
     <!-- Main Title -->
     <div class="main-title">
-        <h1>شنط إضافية وسعر أوفر</h1>
-        <p>سافر من السعودية لمصر</p>
+        <h1>عروض الأسعار الحصرية</h1>
+        <p>وفّر أكثر على رحلاتك من السعودية لمصر</p>
     </div>
 
     <!-- Offers -->
     <div class="offers-container">
 
-        <!-- Offer 1: Extra Bag 299 SAR - Cairo Routes -->
+        <!-- Offer 1: 15% Commission via Travel Agents -->
         <div class="offer-card primary">
             <div class="offer-badge">عرض 1</div>
-            <div class="offer-icon" style="position: relative; display: inline-block; cursor: pointer;" onclick="openApp()">
-                🧳
-                <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 20px; font-weight: 900; color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">23</span>
-            </div>
-            <h2 class="offer-title">شنطة إضافية 23 كجم</h2>
+            <div class="offer-icon">💰</div>
+            <h2 class="offer-title">أفضل الأسعار عبر الوكلاء</h2>
+            <p class="offer-subtitle">احجز عبر وكيل السفر واحصل على توفير مضمون</p>
 
             <div class="price-box orange">
-                <div class="price-value">299</div>
-                <div class="price-currency">ريال فقط</div>
+                <div class="discount-value">%15</div>
+                <div class="price-currency">توفير مضمون</div>
             </div>
 
             <ul class="features-list">
-                <li>وزن الشنطة حتى 23 كجم</li>
-                <li>متاح إضافتها عند الحجز أو بعد الشراء</li>
+                <li>احجز عبر أي وكيل سفر معتمد</li>
+                <li>متاح لجميع درجات الحجز</li>
+                <li>صالح حتى 15 مارس 2026</li>
             </ul>
 
             <div class="offer-routes">
@@ -977,75 +881,49 @@
                     <img src="aircairo_aircraft.png" alt="aircraft" class="plane">
                     <div class="line"></div>
                 </div>
-                <div class="route-to">إلى <span class="destination">برج العرب</span> و <span class="destination">أسيوط</span></div>
+                <div class="route-to">إلى <span class="destination">جميع مدن مصر</span></div>
             </div>
 
-            <a href="https://aircairo.com/ar-sa/homepage" target="_blank" class="cta-btn">احجز الآن</a>
+            <div class="offer-note">
+                ⚠️ جدة / المدينة / ينبع: توفير 10%
+            </div>
+
+            <a href="https://aircairo.com/en-sa/office-contacts" target="_blank" class="cta-btn">ابحث عن وكيل سفر</a>
         </div>
 
-        <!-- Offer 2: 50% Discount - Borg El Arab & Assiut Routes -->
+        <!-- Offer 2: 50% Discount - Capital Airport -->
         <div class="offer-card secondary">
             <div class="offer-badge purple">عرض 2</div>
-            <div class="broken-suitcase" style="cursor: pointer;" onclick="openApp()">
-                <svg viewBox="0 0 400 400" class="w-full h-full drop-shadow-lg">
-                    <defs>
-                        <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#462B73;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#5a3d8a;stop-opacity:1" />
-                        </linearGradient>
-                        <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#F7941D;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#ea580c;stop-opacity:1" />
-                        </linearGradient>
-                    </defs>
-                    <!-- Left Handle -->
-                    <g transform="translate(0, 10)">
-                        <rect x="90" y="40" width="10" height="80" fill="#cbd5e1" />
-                        <rect x="140" y="40" width="10" height="80" fill="#cbd5e1" />
-                        <rect x="85" y="30" width="70" height="15" rx="5" fill="#334155" />
-                    </g>
-                    <!-- Right Handle -->
-                    <g transform="translate(0, 10)">
-                        <rect x="250" y="40" width="10" height="80" fill="#fed7aa" />
-                        <rect x="300" y="40" width="10" height="80" fill="#fed7aa" />
-                        <rect x="245" y="30" width="70" height="15" rx="5" fill="#c2410c" />
-                    </g>
-                    <!-- Left Suitcase Half (Purple) -->
-                    <path d="M 50 120 H 190 L 170 150 L 190 180 L 170 210 L 190 240 L 170 270 L 190 300 L 170 330 L 190 360 H 50 Q 20 360 20 330 V 150 Q 20 120 50 120 Z" fill="url(#blueGrad)" stroke="white" stroke-width="2" />
-                    <!-- Right Suitcase Half (Orange) -->
-                    <path d="M 350 120 H 210 L 190 150 L 210 180 L 190 210 L 210 240 L 190 270 L 210 300 L 190 330 L 210 360 H 350 Q 380 360 380 330 V 150 Q 380 120 350 120 Z" fill="url(#orangeGrad)" stroke="white" stroke-width="2" />
-                    <!-- Crack Highlight -->
-                    <path d="M 190 120 L 170 150 L 190 180 L 170 210 L 190 240 L 170 270 L 190 300 L 170 330 L 190 360" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="4" stroke-linecap="round" />
-                    <!-- Wheels -->
-                    <circle cx="60" cy="370" r="15" fill="#1f2937" />
-                    <circle cx="140" cy="370" r="15" fill="#1f2937" />
-                    <circle cx="260" cy="370" r="15" fill="#1f2937" />
-                    <circle cx="340" cy="370" r="15" fill="#1f2937" />
-                </svg>
-            </div>
-            <h2 class="offer-title">وزن إضافي بنصف الثمن</h2>
+            <div class="offer-icon">🏛️</div>
+            <h2 class="offer-title">افتتاح مطار العاصمة!</h2>
+            <p class="offer-subtitle">Capital International Airport (CCE)</p>
 
             <div class="price-box">
                 <div class="discount-value">%50</div>
-                <div class="discount-value">خصم</div>
+                <div class="price-currency">خصم</div>
             </div>
 
             <ul class="features-list">
-                <li>خصم 50% على كل كيلو زائد</li>
-                <li>متاح لجميع الدرجات</li>
+                <li>ذهاب فقط أو ذهاب وعودة</li>
+                <li>جميع درجات الحجز</li>
+                <li>عرض لفترة محدودة جداً!</li>
             </ul>
 
             <div class="offer-routes">
-                <div class="route-from">من جميع مدن المملكة</div>
+                <div class="route-from">جدة (JED)</div>
                 <div class="route-arrow">
                     <div class="line"></div>
                     <img src="aircairo_aircraft.png" alt="aircraft" class="plane">
                     <div class="line"></div>
                 </div>
-                <div class="route-to">إلى <span class="destination">القاهرة</span></div>
+                <div class="route-to">إلى <span class="destination">العاصمة الإدارية (CCE)</span></div>
             </div>
 
-            <a href="https://aircairo.com/en-sa/homepage" target="_blank" class="cta-btn purple">احجز الآن</a>
+            <div class="offer-dates urgent">
+                📅 فترة السفر: 1 - 5 فبراير 2026
+            </div>
+
+            <a href="https://aircairo.com/ar-sa/homepage" target="_blank" class="cta-btn purple">احجز الآن</a>
         </div>
 
     </div>
@@ -1093,14 +971,18 @@
     <div class="terms-section">
         <h3 class="terms-title">الشروط والأحكام</h3>
         <ul class="terms-list">
-            <li>العروض تطبق على الرحلات (السعودية ← مصر) فقط، ولا تطبق على الرحلات (مصر ← السعودية).</li>
-            <li><strong>العرض الأول (299 ريال):</strong> هذا العرض على رحلات برج العرب (الإسكندرية) و(أسيوط) حقيبة إضافية واحدة بوزن 23 كجم لكل مسافر بالغ أو طفل فقط.</li>
-            <li><strong>العرض الثاني (خصم 50%):</strong> يسري هذا العرض على جميع الرحلات من السعودية الي القاهرة فقط.</li>
-            <li>تحتفظ إير كايرو بحق تعديل أو إلغاء العروض وفقًا للسياسات المعتمدة ولا يؤثر ذلك على الطلبات المؤكدة والمدفوعة.</li>
-            <li style="display: flex; flex-wrap: wrap; align-items: flex-start; direction: rtl;">
-                <span style="flex: 1;">يمكن شراء العروض أثناء الحجز أو إضافتها بعد إصدار التذكرة حتى 8 ساعات قبل موعد الإقلاع - وذلك وفقًا للتوافر - عبر الموقع الرسمي أو أي فرع من فروع إير كايرو.</span>
-                <span style="display: flex; align-items: center; gap: 5px; margin-left: 20px; align-self: flex-end;"><svg class="contact-arrow" viewBox="0 0 165 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet"><defs><linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#F7941D;stop-opacity:1" /><stop offset="100%" style="stop-color:#FF8C00;stop-opacity:1" /></linearGradient><filter id="arrowShadow"><feGaussianBlur in="SourceAlpha" stdDeviation="3"/><feOffset dx="0" dy="3" result="offsetblur"/><feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><polygon points="15,30 30,20 30,40" fill="url(#arrowGradient)" filter="url(#arrowShadow)" stroke="#D67A0F" stroke-width="1.5"/><rect x="30" y="15" width="120" height="30" rx="15" ry="15" fill="url(#arrowGradient)" filter="url(#arrowShadow)" stroke="#D67A0F" stroke-width="1.5"/><text x="90" y="35" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="700" fill="#fff" text-anchor="middle" dominant-baseline="middle">تواصل مع فروعنا</text></svg><a href="https://aircairo.com/en-sa/office-contacts" target="_blank" style="display: inline-block; vertical-align: middle;" onclick="planeTakeoff(event, this)"><img src="contact-btn.png" alt="تواصل معنا" class="contact-plane" style="height: 30px; width: auto; margin-right: 5px;"></a></span>
+            <li><strong>عرض الوكلاء (توفير 15%):</strong> يُطبق عند الحجز عبر وكيل سفر معتمد فقط. نسبة التوفير 10% للرحلات من/إلى جدة، المدينة، وينبع.</li>
+            <li><strong>عرض العاصمة الإدارية (خصم 50%):</strong>
+                <ul>
+                    <li>فترة البيع: من 27 يناير إلى 5 فبراير 2026</li>
+                    <li>فترة السفر: من 1 إلى 5 فبراير 2026</li>
+                    <li>الخطوط المشمولة: CCE-JED و JED-CCE فقط</li>
+                    <li>متاح للذهاب فقط أو ذهاب وعودة</li>
+                </ul>
             </li>
+            <li>العروض تطبق على الرحلات من السعودية لمصر فقط.</li>
+            <li>للاستفسارات يرجى التواصل: <a href="mailto:sales.jed@aircairo.com" target="_blank" style="display: inline-block; vertical-align: middle;" onclick="planeTakeoff(event, this)"><img src="contact-btn.png" alt="تواصل معنا" class="contact-plane" style="height: 30px; width: auto; margin-right: 5px;"></a></li>
+            <li>تحتفظ إير كايرو بحق تعديل أو إلغاء العروض وفقًا للسياسات المعتمدة.</li>
         </ul>
     </div>
 
@@ -1140,7 +1022,7 @@
     <script>
         // Page URL (update this after deploying)
         const PAGE_URL = window.location.href;
-        const SHARE_TEXT = 'عروض Air Cairo الحصرية!\n🧳 شنطة إضافية 23 كجم بـ 299 ريال\n⚖️ خصم 50% على الوزن الزائد\nسافر من السعودية لمصر\n';
+        const SHARE_TEXT = 'عروض Air Cairo الحصرية!\n💰 توفير 15% عبر وكلاء السفر\n🏛️ خصم 50% رحلات العاصمة الإدارية\nسافر من السعودية لمصر\n';
 
         // Generate QR Code
         document.addEventListener('DOMContentLoaded', function() {
@@ -1183,40 +1065,7 @@
             setTimeout(() => toast.classList.remove('show'), 3000);
         }
 
-        // App Store Links
-        const APP_LINKS = {
-            android: 'https://play.google.com/store/apps/details?id=com.emotion.aircairo&pcampaignid=web_share',
-            ios: 'https://apps.apple.com/sa/app/air-cairo/id1586107553',
-            huawei: 'https://appgallery.huawei.com/app/C105643273'
-        };
-
-        // Open App directly if installed, otherwise go to Store
-        function openApp() {
-            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-            // Detect device type
-            const isHuawei = /huawei|honor/i.test(userAgent);
-            const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
-            const isAndroid = /android/i.test(userAgent);
-
-            if (isAndroid && !isHuawei) {
-                // Android: Use intent URL to open app directly, fallback to Play Store
-                const intentUrl = 'intent://aircairos.page.link/#Intent;scheme=https;package=com.emotion.aircairo;S.browser_fallback_url=' + encodeURIComponent(APP_LINKS.android) + ';end';
-                window.location.href = intentUrl;
-            } else if (isIOS) {
-                // iOS: Try Universal Link first, then App Store
-                window.location.href = 'https://aircairos.page.link/open';
-                setTimeout(() => {
-                    window.location.href = APP_LINKS.ios;
-                }, 1500);
-            } else if (isHuawei) {
-                window.location.href = APP_LINKS.huawei;
-            } else {
-                window.location.href = APP_LINKS.android;
-            }
-        }
-
-        // Countdown Timer - ends March 15, 2026 at 23:59:59
+        // Countdown Timer - ends March 15, 2026 at 23:59:59 (for offer 1)
         const countdownDeadline = new Date('2026-03-15T23:59:59').getTime();
 
         function updateCountdown() {
@@ -1269,101 +1118,6 @@
                     deferredPrompt = null;
                     document.getElementById('installSection').classList.remove('show');
                 });
-            }
-        }
-
-        // Auto Fullscreen on Mobile - Enhanced Version
-        function goFullscreen() {
-            const elem = document.documentElement;
-
-            // Try all fullscreen methods
-            if (elem.requestFullscreen) {
-                elem.requestFullscreen().catch(err => console.log('Fullscreen error:', err));
-            } else if (elem.webkitRequestFullscreen) {
-                elem.webkitRequestFullscreen();
-            } else if (elem.mozRequestFullScreen) {
-                elem.mozRequestFullScreen();
-            } else if (elem.msRequestFullscreen) {
-                elem.msRequestFullscreen();
-            }
-        }
-
-        // Show iOS Install Banner
-        function showIOSInstallBanner() {
-            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-            const isInStandaloneMode = window.matchMedia('(display-mode: standalone)').matches;
-
-            if (isIOS && !isInStandaloneMode) {
-                // Create banner
-                const banner = document.createElement('div');
-                banner.id = 'ios-install-banner';
-                banner.style.cssText = `
-                    position: fixed;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                    background: linear-gradient(135deg, #462B73 0%, #5a3691 100%);
-                    color: white;
-                    padding: 20px;
-                    text-align: center;
-                    z-index: 10000;
-                    box-shadow: 0 -5px 20px rgba(0,0,0,0.3);
-                    font-family: 'Cairo', sans-serif;
-                    animation: slideUp 0.5s ease;
-                `;
-
-                banner.innerHTML = `
-                    <div style="font-size: 18px; font-weight: bold; margin-bottom: 10px;">
-                        🚀 افتح كتطبيق - للحصول على تجربة أفضل
-                    </div>
-                    <div style="font-size: 14px; margin-bottom: 15px; opacity: 0.9;">
-                        اضغط على <span style="font-size: 24px; vertical-align: middle;">⬆️</span> ثم "إضافة إلى الشاشة الرئيسية"
-                    </div>
-                    <button onclick="document.getElementById('ios-install-banner').remove()"
-                            style="background: white; color: #462B73; border: none; padding: 10px 30px;
-                                   border-radius: 25px; font-size: 16px; font-weight: bold; cursor: pointer;
-                                   font-family: 'Cairo', sans-serif;">
-                        فهمت
-                    </button>
-                `;
-
-                document.body.appendChild(banner);
-
-                // Add animation
-                const style = document.createElement('style');
-                style.textContent = `
-                    @keyframes slideUp {
-                        from { transform: translateY(100%); }
-                        to { transform: translateY(0); }
-                    }
-                `;
-                document.head.appendChild(style);
-            }
-        }
-
-        // Trigger fullscreen on Android
-        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-        const isAndroid = /Android/i.test(navigator.userAgent);
-        const isInStandaloneMode = window.matchMedia('(display-mode: standalone)').matches;
-
-        if (isMobile && !isInStandaloneMode) {
-            // Show iOS banner after 2 seconds
-            setTimeout(showIOSInstallBanner, 2000);
-
-            // Try fullscreen on Android only
-            if (isAndroid) {
-                let fullscreenTriggered = false;
-
-                const triggerFullscreen = () => {
-                    if (!fullscreenTriggered) {
-                        fullscreenTriggered = true;
-                        goFullscreen();
-                    }
-                };
-
-                // Immediate fullscreen on first touch/click
-                document.addEventListener('touchstart', triggerFullscreen, { once: true });
-                document.addEventListener('click', triggerFullscreen, { once: true });
             }
         }
     </script>

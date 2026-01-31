@@ -35,174 +35,46 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        /* Limited Time Badge - Horizontal Layout */
-        .limited-badge {
+        /* Airplane Side Element */
+        .side-airplane {
             position: fixed;
-            left: -240px;
+            left: -300px;
             top: 50%;
             transform: translateY(-50%);
             z-index: 1000;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 10px;
-            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-            padding: 10px 15px;
-            border-radius: 0 20px 20px 0;
-            box-shadow: 0 5px 25px rgba(220, 38, 38, 0.5);
+            width: 350px;
+            height: 400px;
             cursor: pointer;
-            transition: left 0.4s ease, opacity 0.4s ease;
-            opacity: 0.5;
+            transition: left 1.2s ease;
+            overflow: visible;
         }
-        .limited-badge:hover {
-            left: 0;
-            opacity: 1;
+        .side-airplane:hover {
+            left: -150px;
         }
-
-        /* Digital Clock Display */
-        .digital-clock {
-            display: flex;
-            align-items: flex-end;
-            direction: ltr;
-            background: #1a1a1a;
-            padding: 8px 10px;
-            padding-bottom: 18px;
-            border-radius: 10px;
-            border: 2px solid #333;
-            box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);
-            position: relative;
+        .side-airplane img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: right center;
         }
-        .clock-value {
-            font-family: 'Courier New', 'Monaco', monospace;
-            font-size: 26px;
-            font-weight: 900;
-            color: #22c55e;
-            text-shadow: 0 0 10px #22c55e, 0 0 20px #22c55e;
-            letter-spacing: 2px;
-        }
-        .clock-separator {
-            font-family: 'Courier New', monospace;
-            font-size: 26px;
-            font-weight: 900;
-            color: #22c55e;
-            text-shadow: 0 0 10px #22c55e;
-            margin: 0 3px;
-            margin-bottom: 12px;
-        }
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
-        }
-        .clock-label {
-            font-size: 8px;
-            color: #888;
-            margin-top: 2px;
-            text-align: center;
-        }
-        .clock-block {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .clock-timezone {
-            position: absolute;
-            bottom: 3px;
-            left: 42%;
-            transform: translateX(-50%);
-            font-size: 9px;
-            color: #22c55e;
-            text-shadow: 0 0 5px #22c55e, 0 0 10px #22c55e;
-            font-weight: 900;
-            letter-spacing: 1px;
-        }
-        .clock-baggage-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: 6px;
-            font-size: 26px;
-            text-decoration: none;
-            animation: suitcaseBounce 2s ease-in-out infinite;
-            transition: transform 0.2s ease;
-        }
-        .clock-baggage-btn:hover {
-            transform: scale(1.2);
-        }
-
-        /* Badge Text */
-        .limited-badge .badge-text {
-            color: #fff;
-            font-weight: 900;
-            font-size: 16px;
-            line-height: 1.4;
-            text-align: right;
-            white-space: nowrap;
-        }
-        .limited-badge .badge-text span {
-            display: block;
-        }
-
         @media (max-width: 767px) {
-            .limited-badge {
-                left: -155px;
-                padding: 8px 12px;
-                gap: 8px;
+            .side-airplane {
+                left: -200px;
+                width: 250px;
+                height: 300px;
             }
-            .limited-badge:hover {
-                left: 0;
-            }
-            .clock-value {
-                font-size: 18px;
-            }
-            .clock-separator {
-                font-size: 18px;
-                margin-bottom: 8px;
-            }
-            .digital-clock {
-                padding: 6px 8px;
-                padding-bottom: 14px;
-            }
-            .limited-badge .badge-text {
-                font-size: 11px;
-            }
-            .clock-label {
-                font-size: 6px;
-            }
-            .clock-timezone {
-                font-size: 6px;
-                bottom: 2px;
-            }
-            .clock-baggage-btn {
-                font-size: 22px;
-                margin-left: 4px;
+            .side-airplane:hover {
+                left: -50px;
             }
         }
         @media (max-width: 380px) {
-            .limited-badge {
-                left: -100px;
-                padding: 6px 10px;
-                gap: 6px;
+            .side-airplane {
+                left: -160px;
+                width: 200px;
+                height: 250px;
             }
-            .clock-value {
-                font-size: 14px;
-            }
-            .clock-separator {
-                font-size: 14px;
-                margin-bottom: 6px;
-            }
-            .digital-clock {
-                padding: 5px 6px;
-                padding-bottom: 12px;
-            }
-            .limited-badge .badge-text {
-                font-size: 10px;
-            }
-            .clock-timezone {
-                font-size: 5px;
-                bottom: 2px;
-            }
-            .clock-baggage-btn {
-                font-size: 18px;
+            .side-airplane:hover {
+                left: -40px;
             }
         }
 
@@ -345,62 +217,6 @@
             0%, 100% { transform: translateY(0) scale(1); opacity: 1; }
             50% { transform: translateY(5px) scale(0.9); opacity: 0.7; }
         }
-        /* Hand for clock suitcase */
-        .clock-baggage-btn {
-            position: relative;
-        }
-        .clock-tap-hand {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            font-size: 14px;
-            animation: tapAnimation 1.5s ease-in-out infinite;
-        }
-        /* Baggage with waving hands - horizontal layout */
-        .clock-baggage-btn {
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            gap: 1px;
-            margin-left: 6px;
-        }
-        .clock-baggage-btn .suitcase-wrap {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 4px;
-        }
-        .clock-baggage-btn .suitcase {
-            font-size: 20px;
-            animation: suitcaseBounce 2s ease-in-out infinite;
-        }
-        .clock-baggage-btn .legs {
-            font-size: 8px;
-            margin-top: -4px;
-            display: flex;
-            gap: 6px;
-        }
-        .foot-left {
-            transform: scaleX(-1);
-        }
-        .hand-left, .hand-right {
-            font-size: 14px;
-        }
-        .hand-left {
-            animation: waveLeft 1s ease-in-out infinite;
-        }
-        .hand-right {
-            animation: waveRight 1s ease-in-out infinite;
-        }
-        @keyframes waveLeft {
-            0%, 100% { transform: rotate(0deg); }
-            50% { transform: rotate(-20deg); }
-        }
-        @keyframes waveRight {
-            0%, 100% { transform: rotate(0deg); }
-            50% { transform: rotate(20deg); }
-        }
-
         /* Contact Airplane Animation */
         .contact-plane {
             animation: planePulse 1.5s ease-in-out infinite;
@@ -417,48 +233,6 @@
             0% { transform: translate(0, 0) scale(1); opacity: 1; }
             30% { transform: translate(-50px, 0) scale(1.2); opacity: 1; }
             100% { transform: translate(-150px, -100px) scale(2.5); opacity: 0; }
-        }
-
-        /* Contact Arrow (SVG) */
-        .contact-arrow {
-            display: inline-block;
-            vertical-align: middle;
-            height: 40px;
-            width: 120px;
-            margin-left: 5px;
-            margin-right: 5px;
-            animation: arrowFloat 2.5s ease-in-out infinite, arrowPulse 2s ease-in-out infinite;
-            cursor: default;
-            transition: transform 0.3s ease;
-        }
-        .contact-arrow:hover {
-            transform: translateX(5px) scale(1.05);
-        }
-        @keyframes arrowFloat {
-            0%, 100% { transform: translateY(0) translateX(0); }
-            50% { transform: translateY(-5px) translateX(3px); }
-        }
-        @keyframes arrowPulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.85; }
-        }
-
-        /* Responsive adjustments for contact arrow */
-        @media (max-width: 767px) {
-            .contact-arrow {
-                height: 35px;
-                width: 100px;
-                margin-left: 4px;
-                margin-right: 4px;
-            }
-        }
-        @media (max-width: 380px) {
-            .contact-arrow {
-                height: 30px;
-                width: 85px;
-                margin-left: 3px;
-                margin-right: 3px;
-            }
         }
 
         /* Offer Title */
@@ -535,6 +309,103 @@
             font-size: 16px;
         }
 
+        /* Triangle Features Layout */
+        .features-triangle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            margin: 20px 0;
+            padding: 15px;
+            background: linear-gradient(135deg, rgba(247, 148, 29, 0.08) 0%, rgba(70, 43, 115, 0.08) 100%);
+            border-radius: 15px;
+        }
+        .features-triangle .top-feature {
+            font-size: 16px;
+            font-weight: 700;
+            color: #F7941D;
+            text-align: center;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, #fff 0%, #fff8f0 100%);
+            border-radius: 25px;
+            box-shadow: 0 3px 10px rgba(247, 148, 29, 0.3);
+            border: 2px solid #F7941D;
+        }
+        .features-triangle.purple .top-feature {
+            color: #462B73;
+            box-shadow: 0 3px 10px rgba(70, 43, 115, 0.3);
+            border-color: #462B73;
+        }
+        .features-triangle .bottom-features {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            gap: 10px;
+        }
+        .features-triangle .bottom-feature {
+            flex: 1;
+            font-size: 12px;
+            font-weight: 600;
+            color: #333;
+            text-align: center;
+            padding: 10px 8px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+        .features-triangle .bottom-feature::before {
+            content: '\2713';
+            color: #4ade80;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .highlight-percent {
+            font-size: 1.4em;
+            font-weight: 900;
+            color: #dc2626;
+            margin: 0 3px;
+            display: inline-block;
+            text-shadow: 1px 1px 2px rgba(220, 38, 38, 0.3);
+            animation: pulse-percent 2s ease-in-out infinite;
+        }
+        @keyframes pulse-percent {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @media (max-width: 767px) {
+            .features-triangle {
+                padding: 12px;
+                gap: 10px;
+            }
+            .features-triangle .top-feature {
+                font-size: 14px;
+                padding: 6px 15px;
+            }
+            .features-triangle .bottom-feature {
+                font-size: 11px;
+                padding: 8px 5px;
+            }
+        }
+        @media (max-width: 380px) {
+            .features-triangle .top-feature {
+                font-size: 12px;
+                padding: 5px 12px;
+            }
+            .features-triangle .bottom-feature {
+                font-size: 10px;
+                padding: 6px 4px;
+                gap: 3px;
+            }
+            .features-triangle .bottom-feature::before {
+                font-size: 12px;
+            }
+        }
+
         /* CTA Button */
         .cta-btn {
             display: inline-block;
@@ -589,14 +460,49 @@
             gap: 10px;
             margin: 10px 0;
         }
-        .route-arrow .line {
-            height: 2px;
-            width: 40px;
-            background: linear-gradient(90deg, #462B73, #F7941D);
-            border-radius: 2px;
+        .route-arrow .cloud {
+            width: 22px;
+            height: 8px;
+            background: #fff;
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(100, 150, 200, 0.4), inset 0 -2px 4px rgba(200, 220, 240, 0.5);
+            animation: floatCloud 3s ease-in-out infinite;
+        }
+        .route-arrow .cloud:first-child {
+            animation-delay: 0s;
+        }
+        .route-arrow .cloud:last-child {
+            animation-delay: 1.5s;
+        }
+        .route-arrow .cloud::before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            border-radius: 50%;
+            top: -5px;
+            left: 4px;
+            box-shadow: 0 1px 3px rgba(100, 150, 200, 0.3);
+        }
+        .route-arrow .cloud::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
+            top: -3px;
+            right: 3px;
+            box-shadow: 0 1px 3px rgba(100, 150, 200, 0.3);
+        }
+        @keyframes floatCloud {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0.9; }
+            50% { transform: translateY(-3px) translateX(2px); opacity: 1; }
         }
         .route-arrow .plane {
-            width: 32px;
+            width: 45px;
             height: auto;
             animation: flyPlane 2s ease-in-out infinite;
             will-change: transform;
@@ -910,29 +816,10 @@
 </head>
 <body>
 
-    <!-- Limited Time Badge - Horizontal -->
-    <div class="limited-badge">
-        <!-- Badge Text (RIGHT - visible) -->
-        <div class="badge-text">
-            <span>عرض</span>
-            <span>لفترة</span>
-            <span>محدودة</span>
-        </div>
-        <!-- Digital Clock Countdown (LEFT - hidden) -->
-        <div class="digital-clock">
-            <div class="clock-block">
-                <div class="clock-value" id="countdownHours">1184</div>
-                <div class="clock-label">ساعة</div>
-            </div>
-            <div class="clock-separator">:</div>
-            <div class="clock-block">
-                <div class="clock-value" id="countdownMinutes">09</div>
-                <div class="clock-label">دقيقة</div>
-            </div>
-            <div class="clock-timezone">REMAINING</div>
-            <div class="clock-baggage-btn"><span class="hand-left">🖐️</span><span class="suitcase-wrap"><span class="suitcase">🧳</span><span class="legs"><span class="foot-left">🦶</span><span class="foot-right">🦶</span></span></span><span class="hand-right">🤚</span></div>
-        </div>
-    </div>
+    <!-- Side Airplane -->
+    <a href="https://aircairo.com/ar-sa/homepage" target="_blank" class="side-airplane">
+        <img src="x3.PNG" alt="Air Cairo">
+    </a>
 
     <!-- Header -->
     <div class="header">
@@ -965,19 +852,22 @@
                 <div class="price-currency">ريال فقط</div>
             </div>
 
-            <ul class="features-list">
-                <li>وزن الشنطة حتى 23 كجم</li>
-                <li>متاح إضافتها عند الحجز أو بعد الشراء</li>
-            </ul>
+            <div class="features-triangle">
+                <div class="top-feature">تخفيض <span class="highlight-percent">35%</span> على الحقيبة وزن 23 كيلو</div>
+                <div class="bottom-features">
+                    <div class="bottom-feature">متاح إضافتها عند الحجز أو بعد الشراء</div>
+                    <div class="bottom-feature">متاح لجميع الدرجات</div>
+                </div>
+            </div>
 
             <div class="offer-routes">
                 <div class="route-from">من جميع مدن المملكة</div>
                 <div class="route-arrow">
-                    <div class="line"></div>
+                    <div class="cloud"></div>
                     <img src="aircairo_aircraft.png" alt="aircraft" class="plane">
-                    <div class="line"></div>
+                    <div class="cloud"></div>
                 </div>
-                <div class="route-to">إلى <span class="destination">برج العرب</span> و <span class="destination">أسيوط</span></div>
+                <div class="route-to">إلى <span class="destination">القاهرة</span></div>
             </div>
 
             <a href="https://aircairo.com/ar-sa/homepage" target="_blank" class="cta-btn">احجز الآن</a>
@@ -1030,19 +920,22 @@
                 <div class="discount-value">خصم</div>
             </div>
 
-            <ul class="features-list">
-                <li>خصم 50% على كل كيلو زائد</li>
-                <li>متاح لجميع الدرجات</li>
-            </ul>
+            <div class="features-triangle purple">
+                <div class="top-feature">خصم <span class="highlight-percent">50%</span> على كل كيلو زائد</div>
+                <div class="bottom-features">
+                    <div class="bottom-feature">متاح إضافتها عند الحجز أو بعد الشراء</div>
+                    <div class="bottom-feature">متاح لجميع الدرجات</div>
+                </div>
+            </div>
 
             <div class="offer-routes">
                 <div class="route-from">من جميع مدن المملكة</div>
                 <div class="route-arrow">
-                    <div class="line"></div>
+                    <div class="cloud"></div>
                     <img src="aircairo_aircraft.png" alt="aircraft" class="plane">
-                    <div class="line"></div>
+                    <div class="cloud"></div>
                 </div>
-                <div class="route-to">إلى <span class="destination">القاهرة</span></div>
+                <div class="route-to">إلى <span class="destination">برج العرب</span> و <span class="destination">أسيوط</span></div>
             </div>
 
             <a href="https://aircairo.com/en-sa/homepage" target="_blank" class="cta-btn purple">احجز الآن</a>
@@ -1093,14 +986,11 @@
     <div class="terms-section">
         <h3 class="terms-title">الشروط والأحكام</h3>
         <ul class="terms-list">
-            <li>العروض تطبق على الرحلات (السعودية ← مصر) فقط، ولا تطبق على الرحلات (مصر ← السعودية).</li>
-            <li><strong>العرض الأول (299 ريال):</strong> هذا العرض على رحلات برج العرب (الإسكندرية) و(أسيوط) حقيبة إضافية واحدة بوزن 23 كجم لكل مسافر بالغ أو طفل فقط.</li>
-            <li><strong>العرض الثاني (خصم 50%):</strong> يسري هذا العرض على جميع الرحلات من السعودية الي القاهرة فقط.</li>
+            <li>العروض تطبق على الرحلات (السعودية ← مصر) فقط، و<strong>لا تطبق</strong> على الرحلات (مصر ← السعودية).</li>
+            <li><strong>العرض الأول (299 ريال):</strong> حقيبة إضافية واحدة بوزن 23 كجم لكل مسافر بالغ أو طفل.</li>
+            <li><strong>العرض الثاني (خصم 50%):</strong> يسري هذا العرض على رحلات برج العرب (الإسكندرية) وأسيوط فقط عند الشراء المسبق لوزن زائد. ولا يسري الخصم على الشراء في المطار وقت السفر.</li>
+            <li>يمكن شراء العرض المناسب مع التذكرة، كما يمكن إضافته بعد إصدار التذكرة حتى 8 ساعات قبل موعد الإقلاع، وذلك عبر موقعنا الإلكتروني أو من خلال أي فرع من فروع إير كايرو. <a href="https://aircairo.com/en-sa/office-contacts" target="_blank" style="display: inline-block; vertical-align: middle;" onclick="planeTakeoff(event, this)"><img src="contact-btn.png" alt="تواصل معنا" class="contact-plane" style="height: 30px; width: auto; margin-right: 5px;"></a></li>
             <li>تحتفظ إير كايرو بحق تعديل أو إلغاء العروض وفقًا للسياسات المعتمدة ولا يؤثر ذلك على الطلبات المؤكدة والمدفوعة.</li>
-            <li style="display: flex; flex-wrap: wrap; align-items: flex-start; direction: rtl;">
-                <span style="flex: 1;">يمكن شراء العروض أثناء الحجز أو إضافتها بعد إصدار التذكرة حتى 8 ساعات قبل موعد الإقلاع - وذلك وفقًا للتوافر - عبر الموقع الرسمي أو أي فرع من فروع إير كايرو.</span>
-                <span style="display: flex; align-items: center; gap: 5px; margin-left: 20px; align-self: flex-end;"><svg class="contact-arrow" viewBox="0 0 165 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet"><defs><linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#F7941D;stop-opacity:1" /><stop offset="100%" style="stop-color:#FF8C00;stop-opacity:1" /></linearGradient><filter id="arrowShadow"><feGaussianBlur in="SourceAlpha" stdDeviation="3"/><feOffset dx="0" dy="3" result="offsetblur"/><feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><polygon points="15,30 30,20 30,40" fill="url(#arrowGradient)" filter="url(#arrowShadow)" stroke="#D67A0F" stroke-width="1.5"/><rect x="30" y="15" width="120" height="30" rx="15" ry="15" fill="url(#arrowGradient)" filter="url(#arrowShadow)" stroke="#D67A0F" stroke-width="1.5"/><text x="90" y="35" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="700" fill="#fff" text-anchor="middle" dominant-baseline="middle">تواصل مع فروعنا</text></svg><a href="https://aircairo.com/en-sa/office-contacts" target="_blank" style="display: inline-block; vertical-align: middle;" onclick="planeTakeoff(event, this)"><img src="contact-btn.png" alt="تواصل معنا" class="contact-plane" style="height: 30px; width: auto; margin-right: 5px;"></a></span>
-            </li>
         </ul>
     </div>
 
@@ -1216,30 +1106,6 @@
             }
         }
 
-        // Countdown Timer - ends March 15, 2026 at 23:59:59
-        const countdownDeadline = new Date('2026-03-15T23:59:59').getTime();
-
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const remaining = countdownDeadline - now;
-
-            if (remaining <= 0) {
-                document.getElementById('countdownHours').textContent = '0000';
-                document.getElementById('countdownMinutes').textContent = '00';
-                return;
-            }
-
-            const hours = Math.floor(remaining / (1000 * 60 * 60));
-            const minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
-
-            document.getElementById('countdownHours').textContent = hours.toString().padStart(4, '0');
-            document.getElementById('countdownMinutes').textContent = minutes.toString().padStart(2, '0');
-        }
-
-        // Update countdown every second
-        setInterval(updateCountdown, 1000);
-        updateCountdown(); // Initial call
-
         // Plane Takeoff Animation
         function planeTakeoff(event, link) {
             event.preventDefault();
@@ -1269,101 +1135,6 @@
                     deferredPrompt = null;
                     document.getElementById('installSection').classList.remove('show');
                 });
-            }
-        }
-
-        // Auto Fullscreen on Mobile - Enhanced Version
-        function goFullscreen() {
-            const elem = document.documentElement;
-
-            // Try all fullscreen methods
-            if (elem.requestFullscreen) {
-                elem.requestFullscreen().catch(err => console.log('Fullscreen error:', err));
-            } else if (elem.webkitRequestFullscreen) {
-                elem.webkitRequestFullscreen();
-            } else if (elem.mozRequestFullScreen) {
-                elem.mozRequestFullScreen();
-            } else if (elem.msRequestFullscreen) {
-                elem.msRequestFullscreen();
-            }
-        }
-
-        // Show iOS Install Banner
-        function showIOSInstallBanner() {
-            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-            const isInStandaloneMode = window.matchMedia('(display-mode: standalone)').matches;
-
-            if (isIOS && !isInStandaloneMode) {
-                // Create banner
-                const banner = document.createElement('div');
-                banner.id = 'ios-install-banner';
-                banner.style.cssText = `
-                    position: fixed;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                    background: linear-gradient(135deg, #462B73 0%, #5a3691 100%);
-                    color: white;
-                    padding: 20px;
-                    text-align: center;
-                    z-index: 10000;
-                    box-shadow: 0 -5px 20px rgba(0,0,0,0.3);
-                    font-family: 'Cairo', sans-serif;
-                    animation: slideUp 0.5s ease;
-                `;
-
-                banner.innerHTML = `
-                    <div style="font-size: 18px; font-weight: bold; margin-bottom: 10px;">
-                        🚀 افتح كتطبيق - للحصول على تجربة أفضل
-                    </div>
-                    <div style="font-size: 14px; margin-bottom: 15px; opacity: 0.9;">
-                        اضغط على <span style="font-size: 24px; vertical-align: middle;">⬆️</span> ثم "إضافة إلى الشاشة الرئيسية"
-                    </div>
-                    <button onclick="document.getElementById('ios-install-banner').remove()"
-                            style="background: white; color: #462B73; border: none; padding: 10px 30px;
-                                   border-radius: 25px; font-size: 16px; font-weight: bold; cursor: pointer;
-                                   font-family: 'Cairo', sans-serif;">
-                        فهمت
-                    </button>
-                `;
-
-                document.body.appendChild(banner);
-
-                // Add animation
-                const style = document.createElement('style');
-                style.textContent = `
-                    @keyframes slideUp {
-                        from { transform: translateY(100%); }
-                        to { transform: translateY(0); }
-                    }
-                `;
-                document.head.appendChild(style);
-            }
-        }
-
-        // Trigger fullscreen on Android
-        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-        const isAndroid = /Android/i.test(navigator.userAgent);
-        const isInStandaloneMode = window.matchMedia('(display-mode: standalone)').matches;
-
-        if (isMobile && !isInStandaloneMode) {
-            // Show iOS banner after 2 seconds
-            setTimeout(showIOSInstallBanner, 2000);
-
-            // Try fullscreen on Android only
-            if (isAndroid) {
-                let fullscreenTriggered = false;
-
-                const triggerFullscreen = () => {
-                    if (!fullscreenTriggered) {
-                        fullscreenTriggered = true;
-                        goFullscreen();
-                    }
-                };
-
-                // Immediate fullscreen on first touch/click
-                document.addEventListener('touchstart', triggerFullscreen, { once: true });
-                document.addEventListener('click', triggerFullscreen, { once: true });
             }
         }
     </script>

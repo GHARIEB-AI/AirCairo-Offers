@@ -1,0 +1,22 @@
+{
+  "name": "Air Cairo - عروض الأسعار",
+  "short_name": "AirCairo Prices",
+  "description": "عروض Air Cairo - توفير 15% عبر وكلاء السفر + خصم 50% رحلات العاصمة الإدارية",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#462B73",
+  "theme_color": "#462B73",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
