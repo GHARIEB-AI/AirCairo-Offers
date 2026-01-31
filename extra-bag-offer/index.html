@@ -360,16 +360,28 @@
         .clock-waving-hands {
             position: absolute;
             top: -12px;
-            right: -18px;
+            right: -22px;
             font-size: 12px;
-            animation: wavingHands 1s ease-in-out infinite;
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+            display: flex;
+            gap: 2px;
         }
-        @keyframes wavingHands {
-            0%, 100% { transform: rotate(0deg) scale(1); }
-            25% { transform: rotate(15deg) scale(1.1); }
-            50% { transform: rotate(0deg) scale(1); }
-            75% { transform: rotate(-15deg) scale(1.1); }
+        .hand-left {
+            display: inline-block;
+            transform: scaleX(-1);
+            animation: waveLeft 1s ease-in-out infinite;
+        }
+        .hand-right {
+            display: inline-block;
+            animation: waveRight 1s ease-in-out infinite;
+        }
+        @keyframes waveLeft {
+            0%, 100% { transform: scaleX(-1) rotate(0deg); }
+            50% { transform: scaleX(-1) rotate(-20deg); }
+        }
+        @keyframes waveRight {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(20deg); }
         }
 
         /* Contact Airplane Animation */
@@ -901,7 +913,7 @@
                 <div class="clock-label">دقيقة</div>
             </div>
             <div class="clock-timezone">REMAINING</div>
-            <div class="clock-baggage-btn">🧳<span class="clock-waving-hands">🖐️🤚</span></div>
+            <div class="clock-baggage-btn">🧳<span class="clock-waving-hands"><span class="hand-left">🖐️</span><span class="hand-right">🖐️</span></span></div>
         </div>
     </div>
 
